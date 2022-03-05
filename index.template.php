@@ -178,7 +178,7 @@ function template_theme_header()
 	<header>
 		<div id="header">
 			<h1 class="forumtitle">
-				<a id="top" href="', $scripturl, '">', empty($context['header_logo_url_html_safe']) ? '<span class="theme-logo">' . themecustoms_icon('fa fa-bolt') . $settings['theme_real_name']. '</span>' : '<img src="' . $context['header_logo_url_html_safe'] . '" alt="' . $context['forum_name_html_safe'] . '">', '</a>
+				<a id="top" href="', $scripturl, '">', empty($context['header_logo_url_html_safe']) ? '<span class="theme-logo">' . themecustoms_icon('fa fa-bolt') . $settings['theme_name']. '</span>' : '<img src="' . $context['header_logo_url_html_safe'] . '" alt="' . $context['forum_name_html_safe'] . '">', '</a>
 			</h1>';
 
 			// Theme Variants
