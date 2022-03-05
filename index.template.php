@@ -122,24 +122,20 @@ function template_body_above()
 			</div><!-- .inner_wrap -->
 		</div><!-- #top_section -->';
 
-		// Header
-		template_theme_header();
-
-		// Show the menu here
-		template_menu();
-
 	echo '
 		<div id="wrapper">
-			<div id="upper_section">
-				<div id="inner_section">';
+			<div id="content_section">';
+
+					// Show the menu here
+					template_menu();
+
+					// Header
+					template_theme_header();
 
 					// Theme LInktree
-					theme_linktree();
+					// theme_linktree();
 
-	echo '
-				</div><!-- #inner_section -->
-			</div><!-- #upper_section -->
-			<div id="content_section">
+			echo '
 				<div id="main_content_section">';
 }
 
@@ -182,7 +178,7 @@ function template_theme_header()
 	<header>
 		<div id="header">
 			<h1 class="forumtitle">
-				<a id="top" href="', $scripturl, '">', empty($context['header_logo_url_html_safe']) ? '<span class="theme-logo"><span>' . substr_replace($settings['theme_real_name'], '', -1) . '</span><span>' . substr_replace($settings['theme_real_name'], '', 0, 4). '</span></span>' : '<img src="' . $context['header_logo_url_html_safe'] . '" alt="' . $context['forum_name_html_safe'] . '">', '</a>
+				<a id="top" href="', $scripturl, '">', empty($context['header_logo_url_html_safe']) ? '<span class="theme-logo">' . themecustoms_icon('fa fa-bolt') . $settings['theme_real_name']. '</span>' : '<img src="' . $context['header_logo_url_html_safe'] . '" alt="' . $context['forum_name_html_safe'] . '">', '</a>
 			</h1>';
 
 			// Theme Variants
@@ -280,10 +276,7 @@ function template_theme_userarea()
 			<li>', sprintf($txt['welcome_guest'], $context['forum_name_html_safe'], $scripturl . '?action=login', 'return true;'), '</li>';
 
 			// Add the mode selector
-			themecustoms_darkmode();
-
-			// Add the color selection
-			themecustoms_colorpicker();
+			template_theme_darkmode();
 
 		// And now we're done.
 		echo '
@@ -325,6 +318,24 @@ function template_theme_footer()
 	echo '
 		</div>
 	</footer>';
+}
+
+/**
+ * Show the dark mode button
+ */
+function template_theme_darkmode()
+{
+	global $settings;
+	
+	if (!empty($settings['st_enable_dark_mode']) && !empty($settings['customtheme_darkmode']))
+	{
+		echo '
+		<li id="user_thememode">
+			<a href="javascript:void(0);" class="theme-mode-toggle">
+				<span></span>
+			</a>
+		</li>';
+	}
 }
 
 /**
@@ -520,9 +531,9 @@ function template_button_strip($button_strip, $direction = '', $strip_options = 
 						$button .= '
 									<span>' . $txt[$element['text'] . '_desc'] . '</span>';
 					// Surprise mechanic
-					if (isset($element['notify_status']))
+					if (isset($element['button_status']))
 						$button .= '
-									<em style="display:none;">' . $element['notify_status'] . '</em>';
+									<em style="display:none;">' . $element['button_status'] . '</em>';
 					$button .= '
 								</a>';
 				}
