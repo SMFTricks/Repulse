@@ -29,7 +29,7 @@ function template_html_above()
 
 	// Show right to left, the language code, and the character set for ease of translating.
 	echo '<!DOCTYPE html>
-<html', $context['right_to_left'] ? ' dir="rtl"' : '', !empty($txt['lang_locale']) ? ' lang="' . str_replace("_", "-", substr($txt['lang_locale'], 0, strcspn($txt['lang_locale'], "."))) . '"' : '', $settings['themecustoms_html_attributes_data'], '>
+<html', $context['right_to_left'] ? ' dir="rtl"' : '', !empty($txt['lang_locale']) ? ' lang="' . str_replace("_", "-", substr($txt['lang_locale'], 0, strcspn($txt['lang_locale'], "."))) . '"' : '', (isset($settings['themecustoms_html_attributes_data']) ? $settings['themecustoms_html_attributes_data'] : ''), '>
 <head>
 	<meta charset="', $context['character_set'], '">';
 
@@ -56,7 +56,7 @@ function template_html_above()
 	/*	What is your Lollipop's color?
 		Theme Authors, you can change the color here to make sure your theme's main color gets visible on tab */
 	echo '
-	<meta name="theme-color" content="#567c8f">';
+	<meta name="theme-color" content="', !empty($settings['st_site_color']) ? $settings['st_site_color'] : '#567c8f', '">';
 
 	// Please don't index these Mr Robot.
 	if (!empty($context['robot_no_index']))

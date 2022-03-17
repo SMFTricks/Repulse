@@ -4,7 +4,7 @@
  * @package Theme Customs
  * @author Diego Andrés <diegoandres_cortes@outlook.com>
  * @copyright Copyright (c) 2022, SMF Tricks
- * @license MIT
+ * @license GNU GPLv3
  */
 
 namespace ThemeCustoms;
@@ -48,9 +48,6 @@ class Integration
 
 		// Main hooks
 		$this->loadHooks();
-
-		// Add any global data attributes
-		$this->htmlAttributes();
 	}
 
 	/**
@@ -119,6 +116,7 @@ class Integration
 			'current_action' => 'disable_icons',
 			'actions' => 'hookActions',
 			'buffer' => 'hookBuffer#',
+			'theme_context' => 'htmlAttributes#',
 		];
 		foreach ($hooks as $point => $callable)
 			add_integration_function('integrate_' . $point, __CLASS__ . '::' . $callable, false,  '$themedir/themecustoms/Integration.php');

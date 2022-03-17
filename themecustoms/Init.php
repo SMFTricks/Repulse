@@ -4,7 +4,7 @@
  * @package Theme Customs
  * @author Diego Andrés <diegoandres_cortes@outlook.com>
  * @copyright Copyright (c) 2022, SMF Tricks
- * @license MIT
+ * @license GNU GPLv3
  */
 
 namespace ThemeCustoms;
@@ -45,6 +45,14 @@ class Init extends Config
 	];
 
 	/**
+	 * Color Options
+	 */
+	public static $_color_options = [
+		'colorchanger'=> true,
+		'darkmode' => true,
+];
+
+	/**
 	 * Init::loadHooks()
 	 */
 	protected function loadHooks()
@@ -67,7 +75,6 @@ class Init extends Config
 	{
 		// Lato Font
 		loadCSSFile('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap', ['external' => true, 'order_pos' => -800]);
-
 	}
 
 	/**

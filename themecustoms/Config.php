@@ -4,7 +4,7 @@
  * @package Theme Customs
  * @author Diego Andrés <diegoandres_cortes@outlook.com>
  * @copyright Copyright (c) 2022, SMF Tricks
- * @license MIT
+ * @license GNU GPLv3
  */
 
 namespace ThemeCustoms;
@@ -49,6 +49,15 @@ abstract class Config
 	 */
 	public static $_settings = [
 		'include_bootstrap' => false,
+	];
+
+	/**
+	 * @var array Color Options
+	 */
+	public static $_color_options = [
+		'variants' => false,
+		'darkmode' => false,
+		'colorchanger' => false,
 	];
 
 	/**
