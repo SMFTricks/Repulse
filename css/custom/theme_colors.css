@@ -1,7 +1,7 @@
 :root {
 	/* Primary color */
 		/* Hue */
-		--primary-color-hue: 192;
+		--primary-color-hue: 193;
 
 	/* Body */
 		/* Background */
@@ -15,7 +15,7 @@
 
 	/* Links */
 		/* Color */
-		--body-link-color: hsl(var(--primary-color-hue), 75%, 30%);
+		--body-link-color: hsl(var(--primary-color-hue), 75%, 35%);
 
 	/* Mode Toggle */
 		/* Icon */
@@ -60,16 +60,16 @@
 
 	/* Titlebg */
 		/* Background */
-		--titlebg-bg: linear-gradient(to bottom, hsl(var(--primary-color-hue), 35%, 90%) 0%, var(--windowbg-bg) 100%);
-		--titlebg-bg-right: linear-gradient(to right, hsl(var(--primary-color-hue), 35%, 90%) 0%, var(--windowbg-bg) 100%);
-		--titlebg-bg-left: linear-gradient(to left, hsl(var(--primary-color-hue), 35%, 90%) 0%, var(--windowbg-bg) 100%);
+		--titlebg-bg: hsl(var(--primary-color-hue), 0%, 97%);
+		--titlebg-bg-right: var(--titlebg-bg);
+		--titlebg-bg-left: var(--titlebg-bg);
 		/* Color */
-		--titlebg-txt-color: hsl(var(--primary-color-hue), 25%, 40%);
+		--titlebg-txt-color: hsl(var(--primary-color-hue), 80%, 30%);
 
 	/* Windowbg */
 		/* Background */
 		--windowbg-bg: hsl(var(--primary-color-hue), 0%, 95%);
-		--windowbg2-bg: hsl(var(--primary-color-hue), 20%, 92%);
+		--windowbg2-bg: hsl(var(--primary-color-hue), 0%, 92%);
 		--windowbg-bg-target: hsl(var(--primary-color-hue), 25%, 85%);
 		--windowbg-bg-hover: var(--header-bg);
 		/* Shadow */
@@ -83,9 +83,7 @@
 
 	/* Header */
 		/* Background */
-		--header-bg: hsl(var(--primary-color-hue), 65%, 98%);
-		/* Border */
-		--header-border-color: hsl(var(--primary-color-hue), 45%, 80%);
+		--header-bg: hsl(var(--primary-color-hue), 0%, 90%);
 
 	/* Logo */
 		/* Background */
@@ -97,28 +95,30 @@
 
 	/* Nav */
 		/* Background */
-		--nav-bg: hsl(0, 0%, 95%);
+		--nav-bg: transparent;
 		/* Shadow */
 		--nav-shadow-color: rgba(0, 0, 0, 0.1);
 
 	/* Main Nav Items */
 		/* Background */
-		--nav-item-bg: transparent;
-		--nav-item-bg-hover: transparent;
-		--nav-item-bg-active: var(--catbg-bg);
+		--nav-item-bg: hsl(var(--primary-color-hue), 0%, 80%);
+		--nav-item-bg-hover: hsl(var(--primary-color-hue), 0%, 88%);
+		--nav-item-bg-active: var(--header-bg);
 		/* Color */
-		--nav-item-txt-color: hsl(0, 0%, 15%);
-		--nav-item-txt-color-hover: hsl(var(--primary-color-hue), 25%, 40%);
-		--nav-item-txt-color-active: hsl(0, 0%, 100%);
+		--nav-item-txt-color: hsl(var(--primary-color-hue), 0%, 30%);
+		--nav-item-txt-color-hover: hsl(var(--primary-color-hue), 0%, 20%);
+		--nav-item-txt-color-active: hsl(var(--primary-color-hue), 75%, 30%);
 
 	/* Main Nav Drodown */
 		/* Background */
-		--nav-dropdown-bg: hsl(0, 0%, 97%);
+		--nav-dropdown-bg: hsl(0, 0%, 92%);
+		/* Border */
+		--nav-dropdown-border-color: hsl(0, 0%, 80%);
 
 	/* Main Nav Drodown Items */
 		/* Background */
 		--nav-dropdown-item-bg: transparent;
-		--nav-dropdown-item-bg-hover: var(--nav-item-bg-active);
+		--nav-dropdown-item-bg-hover: var(--uppersection-bg);
 		/* Color */
 		--nav-dropdown-item-txt-color: hsl(0, 0%, 12%);
 		--nav-dropdown-item-txt-color-hover: hsl(0, 0%, 100%);
@@ -173,7 +173,7 @@
 
 	/* Other Sections */
 		/* Background */
-		--uppersection-bg: hsl(var(--primary-color-hue), 100%, 17%);
+		--uppersection-bg: hsl(var(--primary-color-hue), 75%, 20%);
 		--forumsections-bg: linear-gradient(hsl(var(--primary-color-hue), 20%, 90%) 0,hsl(0, 0%, 99%) 70%);
 
 	/* Forum News */
@@ -188,11 +188,11 @@
 	
 	/* Board Description */
 		/* Background */
-		--boarddescription-bg: hsl(var(--primary-color-hue), 0%, 88%);
+		--boarddescription-bg: hsl(var(--primary-color-hue), 0%, 92%);
 
 	/* Sub Boards */
 		/* Background */
-		--subboards-bg: hsl(var(--primary-color-hue), 0%, 95%);
+		--subboards-bg: hsl(var(--primary-color-hue), 0%, 93%);
 
 	/* Tab Items */
 		/* Background */

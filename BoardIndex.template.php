@@ -156,32 +156,13 @@ function template_info_center()
 	// Here's where the "Info Center" starts...
 	echo '
 	<div id="upshrink_stats">
-		<div id="info_center_blocks">
-			<ul>';
-
-	// Info Center Elements for tabs
-	foreach ($context['info_center'] as $block)
-	{
-		echo '
-			<li class="title_bar">
-				<a href="#block-' . $block['txt'] . '" class="titlebg">
-					', themecustoms_icon('fa fa-'. $block['txt']) , '
-					<span>', $txt[$block['txt']], '</span>
-				</a>
-			</li>';
-	}
-
-	echo '
-			</ul>';
+		<div class="roundframe">';
 
 	// Load the blocks
 	foreach ($context['info_center'] as $block)
 	{
 		$func = 'template_ic_block_' . $block['tpl'];
-		echo '
-		<div id="block-' . $block['txt'] . '" class="windowbg">
-			', $func(), '
-		</div>';
+		$func();
 	}
 
 	echo '
@@ -198,8 +179,8 @@ function template_ic_block_recent()
 
 	// This is the "Recent Posts" bar.
 	echo '
-		<div class="sub_bar">
-			<h4 class="subbg">
+		<div class="title_bar">
+			<h4 class="titlebg">
 				<a href="', $scripturl, '?action=recent">', $txt['recent_posts'], '</a>
 			</h4>
 		</div>
@@ -229,7 +210,7 @@ function template_ic_block_recent()
 					<li class="windowbg">
 						<h6>', $post['link'], '</h6>
 						<span class="smalltext poster_link">', themecustoms_icon('fa fa-user'), ' ', $post['poster']['link'], '</span>
-						<span class="smalltext">', themecustoms_icon('fa fa-clock'), ' ', $post['time'], '</span><br>
+						<span class="smalltext">', themecustoms_icon('fa fa-clock'), ' ', $post['time'], '</span>
 						<span class="smalltext">', themecustoms_icon('fa fa-folder'), ' ', $post['board']['link'], '</span>
 					</li>';
 		echo '
@@ -247,9 +228,12 @@ function template_ic_block_calendar()
 	global $context, $scripturl, $txt;
 
 	echo '
-		<div class="sub_bar">
-			<h4 class="subbg">
-				<a href="', $scripturl, '?action=calendar">', $context['calendar_only_today'] ? $txt['calendar_today'] : $txt['calendar_upcoming'], '</a>
+		<div class="title_bar">
+			<h4 class="titlebg">
+				<a href="', $scripturl, '?action=calendar">
+					', themecustoms_icon('fa fa-calendar'), '
+					', $context['calendar_only_today'] ? $txt['calendar_today'] : $txt['calendar_upcoming'], '
+				</a>
 			</h4>
 		</div>';
 
@@ -303,51 +287,20 @@ function template_ic_block_stats()
 
 	// Show statistical style information...
 	echo '
-		<div class="sub_bar">
-			<h4 class="subbg">
-				<a href="', $scripturl, '?action=stats">', $txt['forum_stats'], '</a>
+		<div class="title_bar">
+			<h4 class="titlebg">
+				<a href="', $scripturl, '?action=stats">
+					', themecustoms_icon('fa fa-bar-chart'), '
+					', $txt['forum_stats'], '
+				</a>
 			</h4>
 		</div>
-		<div class="total_members">
-			<span class="title">
-				', themecustoms_icon('fas fa-users'), '
-				<span class="block-title">',  $txt['total_members'], '</span>
-			</span>
-			<span class="totals">', $context['common_stats']['total_members'], '</span>
-		</div>
-		<div class="total_posts">
-			<span class="title">
-				', themecustoms_icon('fas fa-comments'), '
-				<span class="block-title">', $txt['total_posts'], '</span>
-			</span>
-			<span class="totals">', $context['common_stats']['total_posts'], '</span>
-		</div>
-		<div class="total_topics">
-			<span class="title">
-				', themecustoms_icon('fas fa-file-alt'), '
-				<span class="block-title">', $txt['total_topics'], '</span>
-			</span>
-			<span class="totals">', $context['common_stats']['total_topics'], '</span>
-		</div>
-		', !empty($settings['show_latest_member']) ? '
-		<div class="latest_member">
-			<span class="title">
-				' . themecustoms_icon('fas fa-user') . '
-				<span class="block-title">' . $txt['latest_member'] . '</span>
-			</span>
-			<span class="totals">' . $context['common_stats']['latest_member']['link'] . '</span>
-		</div>' : '',
-		!empty($context['latest_post']) ? '
-		<div class="latest_post">
-			<span class="title">
-				' . themecustoms_icon('fas fa-comment-dots') . '
-				<span class="block-title">' . $txt['latest_post'] . '</span>
-			</span>
-			<span class="totals">' . $context['latest_post']['link'] . '</span>
-		</div>' : '', '
-		<span>
-			<a class="button stats_link" href="', $scripturl, '?action=stats">', $txt['more_stats'], '</a>
-		</span>';
+		<p class="inline">
+			', $context['common_stats']['boardindex_total_posts'], '', !empty($settings['show_latest_member']) ? ' - ' . $txt['latest_member'] . ': <strong> ' . $context['common_stats']['latest_member']['link'] . '</strong>' : '', '<br>
+				', (!empty($context['latest_post']) ? $txt['latest_post'] . ': <strong>&quot;' . $context['latest_post']['link'] . '&quot;</strong>  (' . $context['latest_post']['time'] . ')<br>' : ''), '
+
+			<a href="', $scripturl, '?action=recent">', $txt['recent_view'], '</a>
+		</p>';
 }
 
 /**
@@ -358,13 +311,14 @@ function template_ic_block_online()
 	global $context, $scripturl, $txt, $modSettings, $settings;
 	// "Users online" - in order of activity.
 	echo '
-			<div class="sub_bar">
-				<h4 class="subbg">
-					', $context['show_who'] ? '<a href="' . $scripturl . '?action=who">' : '', $txt['online_users'], $context['show_who'] ? '</a>' : '', '
-				</h4>
-			</div>
-			<p class="inline">
-				', $context['show_who'] ? '<a href="' . $scripturl . '?action=who">' : '', '<strong>', $txt['online'], ': </strong>', comma_format($context['num_guests']), ' ', $context['num_guests'] == 1 ? $txt['guest'] : $txt['guests'], ', ', comma_format($context['num_users_online']), ' ', $context['num_users_online'] == 1 ? $txt['user'] : $txt['users'];
+		<div class="title_bar">
+			<h4 class="titlebg">
+				', themecustoms_icon('fa fa-users'), '
+				', $context['show_who'] ? '<a href="' . $scripturl . '?action=who">' : '', $txt['online_users'], $context['show_who'] ? '</a>' : '', '
+			</h4>
+		</div>
+		<p class="inline">
+			', $context['show_who'] ? '<a href="' . $scripturl . '?action=who">' : '', '<strong>', $txt['online'], ': </strong>', comma_format($context['num_guests']), ' ', $context['num_guests'] == 1 ? $txt['guest'] : $txt['guests'], ', ', comma_format($context['num_users_online']), ' ', $context['num_users_online'] == 1 ? $txt['user'] : $txt['users'];
 
 	// Handle hidden users and buddies.
 	$bracketList = array();
@@ -383,22 +337,22 @@ function template_ic_block_online()
 
 	echo $context['show_who'] ? '</a>' : '', '
 
-				&nbsp;-&nbsp;', $txt['most_online_today'], ': <strong>', comma_format($modSettings['mostOnlineToday']), '</strong>&nbsp;-&nbsp;
+			&nbsp;-&nbsp;', $txt['most_online_today'], ': <strong>', comma_format($modSettings['mostOnlineToday']), '</strong>&nbsp;-&nbsp;
 				', $txt['most_online_ever'], ': ', comma_format($modSettings['mostOnline']), ' (', timeformat($modSettings['mostDate']), ')<br>';
 
 	// Assuming there ARE users online... each user in users_online has an id, username, name, group, href, and link.
 	if (!empty($context['users_online']))
 	{
-		echo '
-				', sprintf($txt['users_active'], $modSettings['lastActive']), ': ', implode(', ', $context['list_users_online']);
+		echo 
+			sprintf($txt['users_active'], $modSettings['lastActive']), ': ', implode(', ', $context['list_users_online']);
 
 		// Showing membergroups?
 		if (!empty($settings['show_group_key']) && !empty($context['membergroups']))
 			echo '
-				<span class="membergroups">' . implode(', ', $context['membergroups']) . '</span>';
+			<span class="membergroups">' . implode(', ', $context['membergroups']) . '</span>';
 	}
 
 	echo '
-			</p>';
+		</p>';
 }
 ?>
