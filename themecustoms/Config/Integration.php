@@ -7,10 +7,9 @@
  * @license GNU GPLv3
  */
 
-namespace ThemeCustoms;
+namespace ThemeCustoms\Config;
 
-if (!defined('SMF'))
-	die('No direct access...');
+use ThemeCustoms\Init;
 
 class Integration
 {
@@ -66,7 +65,7 @@ class Integration
 			return;
 
 		// Load the theme settings
-		add_integration_function('integrate_theme_settings', __NAMESPACE__ . '\Settings::themeSettings#', false, '$themedir/themecustoms/Settings.php');
+		add_integration_function('integrate_theme_settings', 'ThemeCustoms\Settings\Main::settings#', false, '$themedir/themecustoms/Settings/Main.php');
 	}
 
 	/**
@@ -119,7 +118,7 @@ class Integration
 			'theme_context' => 'htmlAttributes#',
 		];
 		foreach ($hooks as $point => $callable)
-			add_integration_function('integrate_' . $point, __CLASS__ . '::' . $callable, false,  '$themedir/themecustoms/Integration.php');
+			add_integration_function('integrate_' . $point, __CLASS__ . '::' . $callable, false,  '$themedir/themecustoms/Config/Integration.php');
 	}
 
 	/**
@@ -138,7 +137,7 @@ class Integration
 			{
 				// Credits page
 				case 'credits': 
-					add_integration_function('integrate_credits', __CLASS__ . '::credits#', false,  '$themedir/themecustoms/Integration.php');
+					add_integration_function('integrate_credits', __CLASS__ . '::credits#', false,  '$themedir/themecustoms/Config/Integration.php');
 					break;
 			}
 		}

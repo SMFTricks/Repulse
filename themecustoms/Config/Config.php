@@ -7,10 +7,7 @@
  * @license GNU GPLv3
  */
 
-namespace ThemeCustoms;
-
-if (!defined('SMF'))
-	die('No direct access...');
+namespace ThemeCustoms\Config;
 
 abstract class Config
 {

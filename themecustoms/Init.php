@@ -9,8 +9,7 @@
 
 namespace ThemeCustoms;
 
-if (!defined('SMF'))
-	die('No direct access...');
+use ThemeCustoms\Config\ { Config };
 
 class Init extends Config
 {
