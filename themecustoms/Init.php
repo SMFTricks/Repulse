@@ -49,12 +49,14 @@ class Init extends Config
 	public static $_color_options = [
 		'colorchanger'=> true,
 		'darkmode' => true,
-];
+	];
+
+	// public static $_likes_quickbutton = true;
 
 	/**
 	 * Init::loadHooks()
 	 */
-	protected function loadHooks()
+	protected function loadHooks() : void
 	{
 		// Load fonts
 		add_integration_function('integrate_pre_css_output', __CLASS__ . '::fonts', false, '$themedir/themecustoms/Init.php');
@@ -70,7 +72,7 @@ class Init extends Config
 	 * 
 	 * @param array $assets The assets array
 	 */
-	public static function fonts()
+	public static function fonts() : void
 	{
 		// Roboto Font
 		loadCSSFile('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap', ['external' => true, 'order_pos' => -800]);
@@ -84,7 +86,7 @@ class Init extends Config
 	 * @param bool $darkmode
 	 * @return void
 	 */
-	public static function darkMode(bool &$darkmode)
+	public static function darkMode(bool &$darkmode) : void
 	{
 		$darkmode = true;
 	}
