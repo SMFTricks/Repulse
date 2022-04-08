@@ -51,8 +51,6 @@ class Init extends Config
 		'darkmode' => true,
 	];
 
-	// public static $_likes_quickbutton = true;
-
 	/**
 	 * Init::loadHooks()
 	 */
