@@ -15,7 +15,7 @@
  */
 function template_popup()
 {
-	global $context, $settings, $txt;
+	global $context, $txt;
 
 	// Since this is a popup of its own we need to start the html, etc.
 	echo '<!DOCTYPE html>
