@@ -497,22 +497,13 @@
 	.navigate_section ul li.show {
 		display: flex;
 	}
-	#header {
+	#main_header {
 		flex-direction: column;
-	}
-	#header h1.forumtitle {
-		position: relative;
 	}
 	.custom_search {
 		border-width: 0;
 		top: 36px;
 		padding: 0;
-	}
-	#header h1.forumtitle {
-		bottom: -15px;
-		padding: 0;
-		display: flex;
-		align-items: center;
 	}
 	/* This is general */
 	#main_menu .popup_container,
@@ -729,8 +720,8 @@
 	.social_icons {
 		justify-content: center;
 	}
-	h1.forumtitle a, h1.forumtitle {
-		max-width: 300px;
+	#main_header h1.forumtitle {
+		font-size: 3em;
 	}
 	.board_moderators {
 		display: none;

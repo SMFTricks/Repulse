@@ -56,7 +56,7 @@ function template_html_above()
 	/*	What is your Lollipop's color?
 		Theme Authors, you can change the color here to make sure your theme's main color gets visible on tab */
 	echo '
-	<meta name="theme-color" content="', !empty($settings['st_site_color']) ? $settings['st_site_color'] : '#567c8f', '">';
+	<meta name="theme-color" content="', !empty($settings['st_site_color']) ? $settings['st_site_color'] : '#004153', '">';
 
 	// Please don't index these Mr Robot.
 	if (!empty($context['robot_no_index']))
@@ -176,7 +176,7 @@ function template_theme_header()
 
 	echo '
 	<header>
-		<div id="header">
+		<div id="main_header">
 			<h1 class="forumtitle">
 				<a id="top" href="', $scripturl, '">', empty($context['header_logo_url_html_safe']) ? '<span class="theme-logo">' . themecustoms_icon('fa fa-bolt') . $settings['theme_name']. '</span>' : '<img src="' . $context['header_logo_url_html_safe'] . '" alt="' . $context['forum_name_html_safe'] . '">', '</a>
 			</h1>';
