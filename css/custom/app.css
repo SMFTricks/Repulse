@@ -911,6 +911,8 @@ p.moderators > :is(a, a:visited, a:hover) {
 .pagesection > div,
 .pagesection > div.floatleft {
 	justify-content: flex-start;
+	flex-grow: 1;
+	align-items: center;
 }
 .pagesection > div.floatright {
 	justify-content: flex-end;
@@ -2465,9 +2467,11 @@ div#settingtype-information[aria-hidden="false"]~input[type="submit"] {
 /** Titles **/
 #display_head {
 	margin-top: -15px;
-	margin-bottom: 5px;
+	margin-bottom: 1em;
 	padding-inline: 1em;
-	padding-block: 0.8em;
+	padding-top: 1.25em;
+	padding-bottom: 0.75em;
+	box-shadow: 2px 7px 8px 0 rgba(0, 0, 0, 0.4) inset;
 }
 #display_head h2.display_title {
 	font-size: 1.3rem;

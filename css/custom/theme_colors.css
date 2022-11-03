@@ -60,9 +60,9 @@
 
 	/* Titlebg */
 		/* Background */
-		--titlebg-bg: hsl(var(--primary-color-hue), 0%, 97%);
-		--titlebg-bg-right: var(--titlebg-bg);
-		--titlebg-bg-left: var(--titlebg-bg);
+		--titlebg-bg: var(--windowbg-bg);
+		--titlebg-bg-right: var(--windowbg-bg);
+		--titlebg-bg-left: var(--windowbg-bg);
 		/* Color */
 		--titlebg-txt-color: hsl(var(--primary-color-hue), 80%, 30%);
 
@@ -211,7 +211,7 @@
 
 	/* Tab Items */
 		/* Background */
-		--themetab-item-bg: #fafafa;
+		--themetab-item-bg: var(--content-section-bg);
 		/* Color */
 		--themetab-item-txt-color: #595959;
 

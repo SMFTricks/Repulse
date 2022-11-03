@@ -25,7 +25,6 @@
 	--nav-item-txt-color-hover: #a6a6a6;
 	--nav-dropdown-item-txt-color: #a6a6a6;
 	--catbg-bg: #121212;
-	--titlebg-bg: #141414;
 	--titlebg-txt-color: hsl(var(--primary-color-hue), 35%, 85%);
 	--content-section-bg: hsl(var(--primary-color-hue), 15%, 5%);
 	--uppersection-bg: hsl(var(--primary-color-hue), 100%, 12%);
@@ -35,10 +34,9 @@
 	--windowbg-bg: #171717;
 	--windowbg-bg-target: #262626;
 	--windowbg-shadow: 0px 1px 1px 0px rgba(105, 105, 105, 0.1) inset, 0px -1px 1px 0px rgba(105, 105, 105, 0.1) inset;
-	--boardmoderators-bg: hsl(var(--primary-color-hue), 25%, 15%);
-	--boarddescription-bg: hsl(var(--primary-color-hue), 20%, 10%);
-	--subboards-bg: hsl(var(--primary-color-hue), 30%, 10%);
-	--themetab-item-bg: hsl(var(--primary-color-hue), 35%, 8%);
+	--boardmoderators-bg: #252525;
+	--boarddescription-bg: #1a1a1a;
+	--subboards-bg: #222222;
 	--themetab-item-txt-color: hsl(var(--primary-color-hue), 10%, 40%);
 	--status-sticky-bg: hsl(var(--primary-color-hue), 30%, 12%);
 	--status-locked-bg: hsl(var(--primary-color-hue), 25%, 5%);
