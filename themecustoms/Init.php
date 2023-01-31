@@ -3,7 +3,7 @@
 /**
  * @package Theme Customs
  * @author Diego Andrés <diegoandres_cortes@outlook.com>
- * @copyright Copyright (c) 2022, SMF Tricks
+ * @copyright Copyright (c) 2023, SMF Tricks
  * @license GNU GPLv3
  */
 
@@ -50,6 +50,11 @@ class Init extends Config
 		'colorchanger'=> true,
 		'darkmode' => true,
 	];
+
+	/**
+	 * Traditional likes style
+	 */
+	public static $_likes_quickbutton = false;
 
 	/**
 	 * Init::loadHooks()

@@ -98,6 +98,7 @@
 	/* Top Bar */
 		/* Background */
 		--topbar-bg: hsl(var(--primary-color-hue), 100%, 20%);
+		--topbar-bg-hover: hsl(var(--primary-color-hue), 40%, 35%);
 		/* Border */
 		--topbar-border-color: #000000;
 		/* Color */
@@ -256,8 +257,12 @@
 
 	/* Amt */
 		/* Background */
-		--amt-bg: hsl(var(--primary-color-hue), 50%, 25%);
-		--amt-bg-active: hsl(var(--primary-color-hue), 15%, 25%);
+		--amt-bg: hsl(var(--primary-color-hue), 0%, 100%);
+		--amt-bg-active: hsl(var(--primary-color-hue), 0%, 90%);
+		/* Color */
+		--amt-txt-color: hsl(var(--primary-color-hue), 0%, 25%);
+		/* Border */
+		--amt-shadow-color: hsl(var(--primary-color-hue), 0%, 50%);
 
 	/* Board Icons */
 		/* Color */

@@ -65,7 +65,7 @@
 	--infobox-bg: hsl(120, 25%, 25%);
 	--infobox-border-color: hsl(120, 100%, 40%);
 	--table-border-color: hsl(var(--primary-color-hue), 25%, 12%);
-	--amt-bg: hsl(var(--primary-color-hue), 65%, 10%);
+	--amt-bg: hsl(var(--primary-color-hue), 0%, 70%);
 	--poster-bg: hsl(var(--primary-color-hue), 12%, 7%);
 	--quote-bg: hsl(var(--primary-color-hue), 10%, 15%);
 	--qutoe-alternate-bg: hsl(var(--primary-color-hue), 10%, 25%);

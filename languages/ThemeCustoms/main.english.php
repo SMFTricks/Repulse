@@ -3,7 +3,7 @@
 /**
  * @package Theme Customs
  * @author Diego Andrés <diegoandres_cortes@outlook.com>
- * @copyright Copyright (c) 2022, SMF Tricks
+ * @copyright Copyright (c) 2023, SMF Tricks
  * @license MIT
  */
 
@@ -171,12 +171,20 @@ $txt['st_twitter'] = 'Twitter';
 $txt['st_twitter_username'] = 'Twitter username';
 $txt['st_youtube'] = 'YouTube';
 $txt['st_youtube_link'] = 'Youtube link';
+$txt['st_tiktok'] = 'TikTok';
+$txt['st_tiktok_username'] = 'TikTok username';
 $txt['st_instagram'] = 'Instagram';
 $txt['st_instagram_username'] = 'Instagram username';
 $txt['st_discord'] = 'Discord';
 $txt['st_discord_link'] = 'Discord link';
 $txt['st_twitch'] = 'Twitch';
 $txt['st_twitch_username'] = 'Twitch username';
+$txt['st_steam'] = 'Steam';
+$txt['st_steam_link'] = 'Steam link';
+$txt['st_github'] = 'GitHub';
+$txt['st_github_link'] = 'GitHub link';
+$txt['st_linkedin'] = 'LinkedIn';
+$txt['st_linkedin_link'] = 'LinkedIn link';
 $txt['st_rss_url'] = 'RSS URL';
 $txt['st_rss'] = 'RSS Feed';
 $txt['st_social_desc'] = 'Leave blank to disable.';

@@ -226,22 +226,34 @@ header h1.forumtitle a:hover span.theme-logo span:last-child {
 	--social-icon-light: 40%
 }
 .social_icons a.facebook {
-	background-color: hsl(214, 89%, var(--social-icon-light));
+	background-color: hsl(213, 99%, var(--social-icon-light));
 }
 .social_icons a.twitter {
-	background-color: hsl(203, 89%, var(--social-icon-light));
+	background-color: hsl(204, 88%, var(--social-icon-light));
 }
 .social_icons a.instagram {
-	background-color: hsl(340, 75%, var(--social-icon-light));
+	background-color: hsl(326, 57%, var(--social-icon-light))
 }
 .social_icons a.youtube {
 	background-color: hsl(0, 100%, var(--social-icon-light));
+}
+.social_icons a.tiktok {
+	background-color: hsl(178, 90%, var(--social-icon-light));
 }
 .social_icons a.twitch {
 	background-color: hsl(264, 100%, var(--social-icon-light));
 }
 .social_icons a.discord {
-	background-color: hsl(227, 58%, var(--social-icon-light));
+	background-color: hsl(235, 86%, var(--social-icon-light));
+}
+.social_icons a.steam {
+	background-color: hsl(213, 35%, var(--social-icon-light));
+}
+.social_icons a.github {
+	background-color: hsl(0, 0%, var(--social-icon-light));
+}
+.social_icons a.linkedin {
+	background-color: hsl(210, 90%, var(--social-icon-light));
 }
 .social_icons a.rss {
 	background-color: hsl(25, 85%, var(--social-icon-light));
@@ -254,9 +266,11 @@ header h1.forumtitle a:hover span.theme-logo span:last-child {
 .amt {
 	display: inline-block;
 	background: var(--amt-bg);
-	font-size: 0.75em;
+	color: var(--amt-txt-color);
+	box-shadow: 0 0 1px 1px var(--amt-shadow-color) inset;
+	font-size: 0.85em;
 	margin: 0 0 0 4px;
-	border-radius: 4px;
+	border-radius: 0.75em;
 	padding: 0 8px;
 	min-width: 20px;
 	text-align: center;
@@ -336,6 +350,7 @@ nav#main_nav ul.menu_nav li a.active {
 }
 nav#main_nav ul.menu_nav li a.active span.amt {
 	background: var(--amt-bg-active);
+	color: var(--body-txt-color);
 }
 nav#main_nav ul.menu_nav ul {
 	top: 35px;
@@ -370,12 +385,6 @@ nav#main_nav ul.menu_nav ul li a:hover {
 	border-radius: 3px;
 	background: var(--nav-dropdown-item-bg-hover);
 	color: var(--nav-dropdown-item-txt-color-hover);
-}
-nav#main_nav ul.menu_nav ul li a span.amt {
-	background: var(--nav-dropdown-item-bg-hover);
-}
-nav#main_nav ul.menu_nav ul li a:hover span.amt {
-	background: var(--amt-bg-active);
 }
 
 /* Dropmenu */
@@ -1049,7 +1058,7 @@ p.moderators > :is(a, a:visited, a:hover) {
 	gap: 2px;
 }
 .buttonlist > .top_menu.dropmenu a.active {
-	background: var(--catbg-bg);
+	background: var(--topbar-bg);
 }
 .buttonlist > .top_menu.dropmenu a.active,
 .buttonlist > .top_menu.dropmenu a.active strong {
@@ -1539,7 +1548,7 @@ footer .footer-other span.help-links a i.fa {
 	box-shadow: none;
 	border: none;
 	color: var(--topbar-txt-color-hover);
-	background: var(--nav-item-bg-hover);
+	background: var(--topbar-bg-hover);
 }
 #top_info > li > a.active,
 #top_info > li > a.active:focus,
@@ -1744,16 +1753,6 @@ li#user_thememode a span::before {
 	color: var(--titlebg-txt-color);
 	text-shadow: none;
 	font-size: 0.75em;
-}
-
-/* Like me */
-.under_message ul:not(.quickbuttons) li.smflikebutton,
-.under_message ul:not(.quickbuttons) li.like_count {
-	display: none !important;
-}
-li.smflikebutton,
-li.post_like_button {
-	margin: 0;
 }
 
 /* On Off */
@@ -2471,7 +2470,7 @@ div#settingtype-information[aria-hidden="false"]~input[type="submit"] {
 	padding-inline: 1em;
 	padding-top: 1.25em;
 	padding-bottom: 0.75em;
-	box-shadow: 2px 7px 8px 0 rgba(0, 0, 0, 0.4) inset;
+	box-shadow: 0 2px 5px 3px rgba(0, 0, 0, 0.4) inset;
 }
 #display_head h2.display_title {
 	font-size: 1.3rem;
