@@ -103,17 +103,23 @@ function template_main()
 					// Show the board icon
 					function_exists('themecustoms_' . $board['type'] . '_icon') ? call_user_func('themecustoms_' . $board['type'] . '_icon', $board) : themecustoms_board_icon($board);
 
-					// Show the board name, description, and moderators.
-					function_exists('themecustoms_' . $board['type'] . '_info') ? call_user_func('themecustoms_' . $board['type'] . '_info', $board) : themecustoms_board_info($board);
+					echo '
+					<div class="info">';
+
+						// Show the board name, description, and moderators.
+						function_exists('themecustoms_' . $board['type'] . '_info') ? call_user_func('themecustoms_' . $board['type'] . '_info', $board) : themecustoms_board_info($board);
+
+						// Won't somebody think of the children!
+						function_exists('themecustoms_' . $board['type'] . '_children') ? call_user_func('themecustoms_' . $board['type'] . '_children', $board) : themecustoms_board_children($board);
+
+					echo '
+					</div>';
 
 					// Show some basic information about the number of posts, etc.
 					function_exists('themecustoms_' . $board['type'] . '_stats') ? call_user_func('themecustoms_' . $board['type'] . '_stats', $board) : themecustoms_board_stats($board);
 
 					// Show the last post if there is one.
 					function_exists('themecustoms_' . $board['type'] . '_lastpost') ? call_user_func('themecustoms_' . $board['type'] . '_lastpost', $board) : themecustoms_board_lastpost($board);
-
-					// Won't somebody think of the children!
-					function_exists('themecustoms_' . $board['type'] . '_children') ? call_user_func('themecustoms_' . $board['type'] . '_children', $board) : themecustoms_board_children($board);
 
 			echo '
 				</div><!-- #board_[id] -->';
@@ -133,6 +139,37 @@ function template_main()
 	<div class="mark_read">
 		', template_button_strip($context['mark_read_button'], 'right'), '
 	</div>';
+}
+
+/**
+ * Outputs the board stats for a standard board.
+ *
+ * @param array $board Current board information.
+ */
+function template_bi_board_stats($board)
+{
+	global $txt;
+
+	echo '
+		<p>
+			<strong class="posts">', comma_format($board['posts']), '</strong>', themecustoms_icon('fa fa-comments'), '
+			<strong class="topics">', comma_format($board['topics']), '</strong>', themecustoms_icon('fa fa-file-lines'), '
+		</p>';
+}
+
+/**
+ * Outputs the board stats for a redirect.
+ *
+ * @param array $board Current board information.
+ */
+function template_bi_redirect_stats($board)
+{
+	global $txt;
+
+	echo '
+		<p>
+			<strong class="redirects">', comma_format($board['posts']), '</strong>', themecustoms_icon('fa fa-link'), '
+		</p>';
 }
 
 /**

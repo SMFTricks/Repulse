@@ -722,6 +722,9 @@ tr.title_bar {
 	border-radius: 4px;
 	margin: 1px 0;
 }
+.boardindex_table .up_contain:hover {
+	background: var(--windowbg2-bg);
+}
 .cat_bar.collapsed {
 	border-radius: 0;
 }
@@ -737,6 +740,9 @@ tr.title_bar {
 	padding: 5px 0;
 	flex-grow: 0;
 }
+.boardindex_table .info .info {
+	width: 100%;
+}
 .boardindex_table .board_stats {
 	padding: 0 5px 0 0;
 	width: 10%;
@@ -748,7 +754,6 @@ tr.title_bar {
 	border: none;
 }
 .boardindex_table .children {
-	background-color: var(--subboards-bg);
 	border-color: var(--catbg-txt-color);
 	display: flex;
 	gap: 0.25em;
@@ -758,6 +763,7 @@ tr.title_bar {
 	text-align: right;
 	font-size: 0.68em;
 	margin: 0;
+	padding-inline: 1em;
 }
 p.moderators {
 	font-size: 0.8em;
@@ -767,8 +773,23 @@ p.moderators {
 	border-radius: 3px;
 	margin-top: 2px;
 }
-.boardindex_table .board_stats strong {
-	font-size: initial;
+.boardindex_table .board_stats p {
+	display: inline-grid;
+	grid-template-columns: auto auto;
+	justify-content: center;
+	align-items: center;
+	column-gap: 0.75em;
+	row-gap: 0.5em;
+}
+.boardindex_table .board_stats p i {
+	font-size: 1.5em;
+	color: var(--body-link-color);
+	opacity: 0.8;
+}
+.boardindex_table .board_stats p strong {
+	font-size: 1.25em;
+	flex-grow: 1;
+	font-weight: normal;
 }
 .boardindex_table .board_description {
 	font-size: 0.95em;
@@ -783,6 +804,10 @@ p.moderators {
 }
 .boardindex_table .lastpost p {
 	width: calc(100% - 48px);
+}
+.boardindex_table .lastpost img.avatar {
+	width: 35px;
+	height: 35px;
 }
 .boardindex_table .lastpost p span.time {
 	display: block;
@@ -848,6 +873,9 @@ p.moderators > :is(a, a:visited, a:hover) {
 #messageindex #topic_header {
 	border-radius: 4px;
 }
+#messageindex #topic_container .info {
+	width: 50%;
+}
 #messageindex #topic_header .board_stats,
 #messageindex #topic_container .board_stats {
 	text-align: right;
@@ -871,8 +899,8 @@ p.moderators > :is(a, a:visited, a:hover) {
 	align-items: flex-end;
 }
 #messageindex #topic_container .lastpost img.avatar_dot {
-	width: 40px;
-	height: 40px;
+	width: 30px;
+	height: 30px;
 }
 #messageindex #topic_container .lastpost,
 #messageindex #topic_header .lastpost {
@@ -1870,7 +1898,6 @@ li#user_thememode a span::before {
 	order: 	2;
 	flex-grow: 1;
 	flex-basis: 100%;
-	font-size: 115%;
 	margin: 2px 5px 2px 10px;
 }
 .inner {
@@ -2476,7 +2503,7 @@ div#settingtype-information[aria-hidden="false"]~input[type="submit"] {
 	padding-inline: 1em;
 	padding-top: 1.25em;
 	padding-bottom: 0.75em;
-	box-shadow: 0 2px 5px 3px rgba(0, 0, 0, 0.4) inset;
+	box-shadow: var(--windowbg-shadow-head);
 }
 #display_head h2.display_title {
 	font-size: 1.3rem;
