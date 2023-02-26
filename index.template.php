@@ -118,6 +118,9 @@ function template_body_above()
 				// User Area and Login button
 				template_theme_userarea();
 
+				// Search
+				themecustoms_search();
+
 	echo '
 			</div><!-- .inner_wrap -->
 		</div><!-- #top_section -->';
@@ -179,12 +182,17 @@ function template_theme_header()
 		<div id="main_header">
 			<h1 class="forumtitle">
 				<a id="top" href="', $scripturl, '">', empty($context['header_logo_url_html_safe']) ? '<span class="theme-logo">' . themecustoms_icon('fa fa-bolt') . $settings['theme_name']. '</span>' : '<img src="' . $context['header_logo_url_html_safe'] . '" alt="' . $context['forum_name_html_safe'] . '">', '</a>
-			</h1>';
+			</h1>
+			<div class="themecustoms">';
 
-			// Theme Variants
-			themecustoms_search();
+				// Theme Socials
+				themecustoms_socials();
+
+				// Variants
+				template_theme_colorpicker();
 
 	echo '
+			</div>
 		</div>
 	</header>';
 }
@@ -283,7 +291,6 @@ function template_theme_footer()
 					<li class="smf_copyright">', theme_copyright(), '</li>
 				</ul>
 				<div class="footer-other">
-					', themecustoms_socials(), '
 					<a href="', $scripturl, '">', $context['forum_name'], ' &copy; ', date('Y'), '</a>
 					<span class="help-links">
 						<a href="', $scripturl, '?action=help">', $txt['help'], '</a>', (!empty($modSettings['requireAgreement'])) ? '
@@ -324,6 +331,31 @@ function template_theme_darkmode()
 }
 
 /**
+ * Show a colorpicker
+ */
+function template_theme_colorpicker()
+{
+	global $settings, $txt, $scripturl, $context;
+
+	if (!empty($settings['theme_variants']) && count($settings['theme_variants']) > 1 && empty($settings['disable_user_variant']))
+	{
+		echo '
+		<div id="user_colorpicker">';
+		
+		// Theme variants
+		foreach ($settings['theme_variants'] as $variant)
+		{
+			echo '
+				<a href="', $scripturl, '?variant=' . $variant . '" class="theme-variant-toggle', ($context['theme_variant'] == $variant ? ' active' : '') , '" data-color="', $variant, '">
+					', $txt['variant_'. $variant], '
+				</a>';
+		}
+		echo '
+		</div>';
+	}
+}
+
+/**
  * Show a linktree. This is that thing that shows "My Community | General Category | General Discussion"..
  *
  * @param bool $force_show Whether to force showing it even if settings say otherwise
@@ -341,7 +373,7 @@ function theme_linktree($force_show = false)
 				<div class="navigate_section">
 					<ul>
 						<li class="trigger">
-							<a href="javascript:void(0);">
+							<a href="javascript:void(0);" tabindex="-1">
 								', themecustoms_icon('fa fa-bars'), '
 							</a>
 						</li>';

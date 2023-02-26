@@ -10,7 +10,7 @@
 	--input-border-color: hsl(var(--primary-color-hue), 55%, 15%);
 	--input-shadow-color: rgba(0, 0, 0, 0.4);
 	--input-txt-color: #e6e6e6;
-	--input-accent-color: hsl(var(--primary-color-hue), 65%, 30%);
+	--input-accent-color: hsl(var(--primary-color-hue), 65%, 15%);
 	--header-bg: #0d0d0d;
 	--logo-bg-hover: #0d0d0d;
 	--footer-bg: hsl(var(--primary-color-hue), 60%, 10%);
@@ -31,12 +31,12 @@
 	--forumsections-bg: linear-gradient(hsl(var(--primary-color-hue), 25%, 8%) 0, var(--content-section-bg));
 	--forumnews-bg: hsl(var(--primary-color-hue), 40%, 8%);
 	--forumnews-bg-inactive: hsl(var(--primary-color-hue), 50%, 3%);
-	--windowbg-bg: #171717;
-	--windowbg2-bg: #1b1b1b;
-	--windowbg-bg-target: #262626;
+	--windowbg-bg: #151515;
+	--windowbg2-bg: #111111;
+	--windowbg-bg-target: hsl(var(--primary-color-hue), 25%, 15%);
 	--windowbg-shadow: 0px 1px 1px 0px rgba(105, 105, 105, 0.1) inset, 0px -1px 1px 0px rgba(105, 105, 105, 0.1) inset;
 	--boardmoderators-bg: #252525;
-	--boarddescription-bg: #1a1a1a;
+	--boarddescription-bg: #181818;
 	--subboards-bg: #222222;
 	--themetab-item-txt-color: hsl(var(--primary-color-hue), 10%, 40%);
 	--status-sticky-bg: hsl(var(--primary-color-hue), 30%, 12%);
@@ -67,7 +67,7 @@
 	--infobox-border-color: hsl(120, 100%, 40%);
 	--table-border-color: hsl(var(--primary-color-hue), 25%, 12%);
 	--amt-bg: hsl(var(--primary-color-hue), 0%, 70%);
-	--poster-bg: hsl(var(--primary-color-hue), 12%, 7%);
+	--poster-bg: hsl(var(--primary-color-hue), 12%, 9%);
 	--quote-bg: hsl(var(--primary-color-hue), 10%, 15%);
 	--qutoe-alternate-bg: hsl(var(--primary-color-hue), 10%, 25%);
 	--code-bg: hsl(var(--primary-color-hue), 15%, 12%);
@@ -77,4 +77,6 @@
 	--topbar-txt-color-hover: #ffffff;
 	--topbar-shadow-color: rgba(0, 0, 0, 0.15);
 	--forumsections-shadow-color: rgba(0, 0, 0, 0.1);
+	--amt-bg: #ffffff;
+	--amt-txt-color: #000000;
 }

@@ -47,7 +47,7 @@ class Init extends Config
 	 * Color Options
 	 */
 	public static $_color_options = [
-		'colorchanger'=> true,
+		'variants'=> true,
 		'darkmode' => true,
 	];
 
@@ -66,6 +66,9 @@ class Init extends Config
 
 		// Dark Mode
 		add_integration_function('integrate_customtheme_color_darkmode', __CLASS__ . '::darkMode', false, '$themedir/themecustoms/Init.php');
+
+		// Variants
+		add_integration_function('integrate_customtheme_color_variants', __CLASS__ . '::variants', false, '$themedir/themecustoms/Init.php');
 	}
 
 	/**
@@ -92,5 +95,25 @@ class Init extends Config
 	public static function darkMode(bool &$darkmode) : void
 	{
 		$darkmode = true;
+	}
+
+	/**
+	 * Init::Variants()
+	 * 
+	 * Add the theme variants
+	 * 
+	 * @param array $variants
+	 * @return void
+	 */
+	public static function variants(array &$variants) : void
+	{
+		$variants = [
+			'red',
+			'green',
+			'blue',
+			'yellow',
+			'purple',
+			'pink',
+		];
 	}
 }

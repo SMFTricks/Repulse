@@ -174,9 +174,6 @@
 	#top_section .inner_wrap, #wrapper, #header, #footer .inner_wrap {
 		width: 100%;
 	}
-	#upper_section, #inner_section, #content_section {
-		border-radius: 0;
-	}
 	#boardindex_table .stats {
 		display: none;
 	}
@@ -470,6 +467,15 @@
 	#info_center_blocks #block-forum_stats > span {
 		text-align: center;
 	}
+	#recent_posts_content ul li {
+		flex-wrap: wrap;
+	}
+	#recent_posts_content ul li > div {
+		flex-basis: 100%;
+	}
+	.social_icons {
+		flex-wrap: wrap;
+	}
 }
 
 @media (min-width: 768px) 
@@ -501,9 +507,15 @@
 	#main_header {
 		flex-direction: column;
 	}
+	#main_header .social_icons {
+		justify-content: center;
+	}
+	#main_header #user_colorpicker {
+		position: static;
+		justify-content: center;
+	}
 	.custom_search {
 		border-width: 0;
-		top: 36px;
 		padding: 0;
 	}
 	/* This is general */

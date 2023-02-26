@@ -264,12 +264,14 @@ function template_ic_block_recent()
 		foreach ($context['latest_posts'] as $post)
 			echo '
 					<li class="windowbg">
-						', (!empty($post['poster']['avatar']) && !empty($post['poster']['avatar']) ? themecustoms_avatar($post['poster']['avatar']['href'], $post['poster']['id']) : ''), '
+						<h6>', $post['link'], '</h6>
 						<div>
-							<h6>', $post['link'], '</h6>
-							<span class="smalltext poster_link">', themecustoms_icon('fa fa-user'), ' ', $post['poster']['link'], '</span>
-							<span class="smalltext">', themecustoms_icon('fa fa-clock'), ' ', $post['time'], '</span><br>
-							<span class="smalltext">', themecustoms_icon('fa fa-folder'), ' ', $post['board']['link'], '</span>
+							', (!empty($post['poster']['avatar']) && !empty($post['poster']['avatar']) ? themecustoms_avatar($post['poster']['avatar']['href'], $post['poster']['id']) : ''), '
+							<p>
+								<span class="smalltext poster_link">', themecustoms_icon('fa fa-user'), ' ', $post['poster']['link'], '</span>
+								<span class="smalltext">', themecustoms_icon('fa fa-clock'), ' ', $post['time'], '</span><br>
+								<span class="smalltext">', themecustoms_icon('fa fa-folder'), ' ', $post['board']['link'], '</span>
+							</p>
 						</div>
 					</li>';
 		echo '

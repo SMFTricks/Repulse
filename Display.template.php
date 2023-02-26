@@ -487,6 +487,13 @@ function template_single_post($message)
 	echo '
 						<div class="poster">';
 
+	// Show the user's avatar.
+	if (!empty($modSettings['show_user_images']) && empty($options['show_no_avatars']) && !empty($message['member']['avatar']['image']))
+		echo '
+							<span class="avatar">
+								<a href="', $message['member']['href'], '">', $message['member']['avatar']['image'], '</a>
+							</span>';
+
 	// Are there any custom fields above the member name?
 	if (!empty($message['custom_fields']['above_member']))
 	{
@@ -541,13 +548,6 @@ function template_single_post($message)
 	if (!empty($message['member']['group']))
 		echo '
 								<li class="membergroup">', $message['member']['group'], '</li>';
-
-	// Show the user's avatar.
-	if (!empty($modSettings['show_user_images']) && empty($options['show_no_avatars']) && !empty($message['member']['avatar']['image']))
-		echo '
-								<li class="avatar">
-									<a href="', $message['member']['href'], '">', $message['member']['avatar']['image'], '</a>
-								</li>';
 
 	// Are there any custom fields below the avatar?
 	if (!empty($message['custom_fields']['below_avatar']))
@@ -830,7 +830,7 @@ function template_single_post($message)
 	if (!empty($modSettings['enable_likes']))
 	{
 		echo '
-								<ul class="floatleft">';
+								<ul class="likes_block">';
 
 		if (!empty($message['likes']['can_like']))
 		{

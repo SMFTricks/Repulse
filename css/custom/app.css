@@ -138,10 +138,25 @@ header {
 }
 #main_header {
 	display: flex;
-	padding: 0;
 	min-height: 130px;
 	max-width: 100% !important;
+	padding-block: 0.5em;
 	padding-inline: 1.5em;
+	align-items: center;
+	position: relative;
+}
+#main_header .themecustoms {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75em;
+	justify-content: flex-end;
+}
+#main_header #user_colorpicker {
+	display: flex;
+	gap: 0.5em;
+	position: absolute;
+	bottom: 0.5em;
+	right: 1.5em;
 }
 header h1.forumtitle {
 	align-self: center;
@@ -213,59 +228,62 @@ header h1.forumtitle a:hover span.theme-logo span:last-child {
 .social_icons {
 	display: flex;
 	justify-content: flex-end;
-	gap: 8px;
+	column-gap: 8px;
+	row-gap: 4px;
 	flex-grow: 1;
 }
 .social_icons a {
 	font-size: 0.9em;
 	--social-icon-light: 58%;
-	width: 25px;
+	width: 35px;
 	padding: 3px 0;
-	height: 25px;
+	height: 35px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	border-radius: 4px;
+	border-radius: 50%;
 	text-decoration: none;
-}
-.social_icons a:hover {
-	--social-icon-light: 40%
-}
-.social_icons a.facebook {
-	background-color: hsl(213, 99%, var(--social-icon-light));
-}
-.social_icons a.twitter {
-	background-color: hsl(204, 88%, var(--social-icon-light));
-}
-.social_icons a.instagram {
-	background-color: hsl(326, 57%, var(--social-icon-light))
-}
-.social_icons a.youtube {
-	background-color: hsl(0, 100%, var(--social-icon-light));
-}
-.social_icons a.tiktok {
-	background-color: hsl(178, 90%, var(--social-icon-light));
-}
-.social_icons a.twitch {
-	background-color: hsl(264, 100%, var(--social-icon-light));
-}
-.social_icons a.discord {
-	background-color: hsl(235, 86%, var(--social-icon-light));
-}
-.social_icons a.steam {
-	background-color: hsl(213, 35%, var(--social-icon-light));
-}
-.social_icons a.github {
-	background-color: hsl(0, 0%, var(--social-icon-light));
-}
-.social_icons a.linkedin {
-	background-color: hsl(210, 90%, var(--social-icon-light));
-}
-.social_icons a.rss {
-	background-color: hsl(25, 85%, var(--social-icon-light));
+	background-color: var(--windowbg-bg-target);
+	transition: color ease-in-out 0.15s;
 }
 .social_icons a i {
-	color: hsl(0, 0%, 100%)
+	transition: scale cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s;
+}
+.social_icons a:hover i {
+	scale: 1.2;
+}
+.social_icons a.facebook:hover {
+	color: hsl(213, 99%, var(--social-icon-light));
+}
+.social_icons a.twitter:hover {
+	color: hsl(204, 88%, var(--social-icon-light));
+}
+.social_icons a.instagram:hover {
+	color: hsl(326, 57%, var(--social-icon-light))
+}
+.social_icons a.youtube:hover {
+	color: hsl(0, 100%, var(--social-icon-light));
+}
+.social_icons a.tiktok:hover {
+	color: hsl(178, 90%, var(--social-icon-light));
+}
+.social_icons a.twitch:hover {
+	color: hsl(264, 100%, var(--social-icon-light));
+}
+.social_icons a.discord:hover {
+	color: hsl(235, 86%, var(--social-icon-light));
+}
+.social_icons a.steam:hover {
+	color: hsl(213, 35%, var(--social-icon-light));
+}
+.social_icons a.github:hover {
+	color: hsl(0, 0%, var(--social-icon-light));
+}
+.social_icons a.linkedin:hover {
+	color: hsl(210, 90%, var(--social-icon-light));
+}
+.social_icons a.rss:hover {
+	color: hsl(25, 85%, var(--social-icon-light));
 }
 
 /* AMT */
@@ -304,9 +322,17 @@ nav#main_nav {
 	margin-inline: 25px;
 	box-shadow: 0px 2px 1px 0px var(--nav-shadow-color);
 }
+nav#main_nav .mobile_user_menu {
+	background: var(--nav-item-bg-active);
+	min-height: 35px;
+	padding-inline: 0.5em;
+	margin-block: 0;
+	border-top-right-radius: 9px;
+	border-top-left-radius: 9px;
+}
 nav#main_nav ul.menu_nav {
 	display: flex;
-	min-height: 30px;
+	min-height: 40px;
 	margin: 0;
 	padding: 0;
 	list-style: none;
@@ -322,7 +348,7 @@ nav#main_nav ul.menu_nav li {
 }
 nav#main_nav ul.menu_nav li a {
 	font-size: 0.75em;
-	min-height: 30px;
+	min-height: 35px;
 	margin:  0;
 	padding: 0 12px;
 	display: flex;
@@ -347,6 +373,9 @@ nav#main_nav ul.menu_nav li:hover a {
 	border-bottom-left-radius: 0;
 	border-bottom-right-radius: 0;
 }
+nav#main_nav ul.menu_nav a:focus {
+	outline: revert;
+}
 nav#main_nav ul.menu_nav li a.active {
 	color: var(--nav-item-txt-color-active);
 	background: var(--nav-item-bg-active);
@@ -354,12 +383,16 @@ nav#main_nav ul.menu_nav li a.active {
 	border-bottom-left-radius: 0;
 	border-bottom-right-radius: 0;
 }
+nav#main_nav ul.menu_nav li a span.amt {
+	line-height: 1.8;
+	padding: 2px;
+}
 nav#main_nav ul.menu_nav li a.active span.amt {
 	background: var(--amt-bg-active);
-	color: var(--body-txt-color);
+	color: var(--amt-txt-color-active);
 }
 nav#main_nav ul.menu_nav ul {
-	top: 35px;
+	top: 40px;
 	background: var(--nav-dropdown-bg);
 	border-width: 0 1px 1px;
 	border-color: var(--nav-dropdown-border-color);
@@ -410,6 +443,7 @@ nav#main_nav ul.menu_nav ul li a:hover {
 	min-height: 30px;
 	display: flex;
 	align-items: center;
+	outline: revert;
 }
 .dropmenu li a.active,
 .dropmenu li a.active:hover,
@@ -507,8 +541,12 @@ nav#main_nav ul.menu_nav ul li a:hover {
 #top_section {
 	background: var(--topbar-bg);
 	box-shadow: 0 25px 20px var(--topbar-shadow-color) inset;
-	border-color: var(--topbar-border-color);
+	border-color: var(--windowbg-bg-hover);
 	border-width: 0 0 2px;
+}
+#top_section .inner_wrap {
+	display: flex;
+	align-items: center;
 }
 #inner_section, .inline_mod_check, .popup_window,
 .post_options ul, .post_options ul a:focus, .post_options ul a:hover,
@@ -519,7 +557,7 @@ nav#main_nav ul.menu_nav ul li a:hover {
 }
 #content_section {
 	background-color: var(--uppersection-bg);
-	box-shadow: 0 25px 15px var(--uppersection-shadow-color) inset;
+	box-shadow: 0 25px 15px var(--forumsections-shadow-color) inset;
 	margin-block-start: 20px;
 	border-radius: 10px;
 	padding: 25px;
@@ -643,11 +681,11 @@ div.title_bar,
 .title_bar {
 	background: var(--titlebg-bg);
 	display: flex;
-	min-height: 20px;
+	min-height: 25px;
 	align-items: center;
 	border-radius: 0;
 	border-color: var(--catbg-txt-color);
-	margin: 1px 0 0;
+	margin: 1px 0;
 	border-width: 0 0 2px;
 	color: var(--titlebg-txt-color);
 }
@@ -657,7 +695,7 @@ div.title_bar,
 .subbg, .titlebg, h3.subbg, h3.titlebg, h4.subbg, h4.titlebg,
 .titlebg a, .subbg a, .title_bar a {
 	font-family: var(--body-font-family);
-	font-size: 0.85em;
+	font-size: 0.9em;
 	text-shadow: 0px -1px 1px rgba(255,255,255,0.3);
 	font-weight: bold;
 	color: var(--titlebg-txt-color);
@@ -966,9 +1004,11 @@ p.moderators > :is(a, a:visited, a:hover) {
 .pagesection div.pagelinks a.button {
 	font-size: 0.65em;
 	padding: 0 5px;
+	text-transform: none;
 }
 .buttonlist.floatright {
 	order: 2;
+	justify-content: flex-end;
 }
 .buttonlist {
 	display: flex;
@@ -1027,8 +1067,8 @@ p.moderators > :is(a, a:visited, a:hover) {
 	position: absolute;
 	right: -8px;
 	top: -12px;
-	min-width: 15px;
-	height: 20px;
+	min-width: 22px;
+	height: 22px;
 	display: flex;
 	flex: 1;
 	justify-content: center;
@@ -1111,17 +1151,13 @@ p.moderators > :is(a, a:visited, a:hover) {
 /* Search */
 .custom_search {
 	background-color: var(--nav-bg);
-	padding: 8px 10px 5px;
+	padding: 0;
 	display: flex;
-	align-self: flex-end;
 	justify-content: center;
 	align-items: center;
-	border-width: 1px 1px 0;
-	border-color: var(--header-border-color);
-	border-style: solid;
+	border-width: 0;
 	border-radius: 5px 5px  0 0;
 	position: relative;
-	top: 1px;
 }
 .custom_search select,
 .custom_search input, .custom_search input.button,
@@ -1135,6 +1171,7 @@ p.moderators > :is(a, a:visited, a:hover) {
 	border-radius: 8px;
 	border-color: var(--input-accent-color);
 	color: var(--input-txt-color);
+	height: 2.5rem;
 }
 .custom_search select{
 	border-left: none;
@@ -1147,13 +1184,10 @@ p.moderators > :is(a, a:visited, a:hover) {
 	border-bottom-right-radius: 0;
 	border-top-right-radius: 0;
 	padding: 1px 8px;
-	width: 6em;
+	width: 8rem;
 	transition: width 0.5s ease-in-out;
 	appearance: none;
 	-webkit-appearance: none;
-}
-.custom_search input[name="search"]:focus {
-	width: 18em;
 }
 .custom_search button {
 	border-width: 1px 0;
@@ -1396,7 +1430,7 @@ footer .footer-other span.help-links a i.fa {
 	flex-basis: 60%;
 	min-width: 50px;
 	font-size: 0.75em;
-	color: hsl(0, 0%, 92%);
+	color: var(--body-txt-color-strong);
 	text-shadow: 0px 1px 5px rgba(0,0,0,0.1);
 	background: var(--catbg-bg);
 	border-top-left-radius: 5px;
@@ -1446,6 +1480,7 @@ footer .footer-other span.help-links a i.fa {
 #recent_posts_content ul li {
 	display: flex;
 	gap: 0.6em;
+	align-items: center;
 }
 #recent_posts_content ul li a {
 	align-self: center;
@@ -1453,10 +1488,14 @@ footer .footer-other span.help-links a i.fa {
 #recent_posts_content ul li img.avatar {
 	vertical-align: middle;
 }
-#recent_posts_content ul li h6,
-#recent_posts_content ul li span.poster_link {
-	grid-column-start: 1;
-	grid-column-end: 2;
+#recent_posts_content ul li h6 {
+	flex-grow: 1;
+}
+#recent_posts_content ul li > div {
+	flex-basis: 35%;
+	display: flex;
+	align-items: center;
+	gap: 0.5em;
 }
 #recent_posts_content ul li span:nth-child(3) {
 	grid-column-start: 2;
@@ -1539,6 +1578,7 @@ footer .footer-other span.help-links a i.fa {
 	min-height: 60px;
 	align-items: center;
 	gap: 0;
+	flex-grow: 1;
 }
 #top_info > li {
 	display: flex;
@@ -1566,6 +1606,9 @@ footer .footer-other span.help-links a i.fa {
 	border-radius: 0;
 	position: relative;
 }
+#top_info > li > a.open {
+	color: var(--catbg-txt-color);
+}
 #top_info > li > a span:not(.fa) {
 	font-size: 0.85em;
 	margin-inline: 3px;
@@ -1575,7 +1618,7 @@ footer .footer-other span.help-links a i.fa {
 	font-weight: bold;
 }
 #top_info > li.button_signup {
-	background: var(--titlebg-bg);
+	background: none;
 }
 
 #top_info > li > a:hover {
@@ -1827,9 +1870,17 @@ li#user_thememode a span::before {
 	padding: 5px 3px;
 	text-align: center;
 	border-radius: 4px 0 0 4px;
+	display: flex;
+	flex-direction: column;
+	gap: 0.25em;
+}
+.post_wrapper .poster h4,
+.post_wrapper .poster h4 a {
+	color: var(--body-link-color);
 }
 .poster img.avatar {
-	max-height: 175px;
+	width: 100px;
+	height: 100px;
 	margin: 0 auto;
 }
 .poster > li.im_icons ol {
@@ -1867,6 +1918,9 @@ li#user_thememode a span::before {
 .postarea .keyinfo .subject_title {
 	flex-basis: 100%;
 	padding: 5px 15px;
+}
+.postarea .keyinfo .subject_title a {
+	color: inherit;
 }
 .postarea .keyinfo .subject_title.subject_hidden input {
 	width: 100%;
@@ -2355,7 +2409,7 @@ dl.settings {
 	margin-block: 1px !important;
 	margin-inline: 0;
 	padding-inline: 6px;
-	padding-block: 0;
+	padding-block: 0.75rem;
 }
 .ui-tabs {
 	position: relative;/* position: relative prevents IE scroll bug (element with position: relative inside container with overflow: auto appear as "fixed") */
@@ -2498,15 +2552,15 @@ div#settingtype-information[aria-hidden="false"]~input[type="submit"] {
 
 /** Titles **/
 #display_head {
-	margin-top: -15px;
 	margin-bottom: 1em;
-	padding-inline: 1em;
-	padding-top: 1.25em;
-	padding-bottom: 0.75em;
-	box-shadow: var(--windowbg-shadow-head);
+	padding-inline: 0.25em;
+	padding-block: 1.25em;
+	border-radius: 0;
+	background: transparent;
+	border-bottom: 1px solid var(--catbg-txt-color);
 }
 #display_head h2.display_title {
-	font-size: 1.3rem;
+	font-size: 24px;
 }
 #display_head p {
 	font-size: 0.85em;
@@ -2516,4 +2570,53 @@ div#settingtype-information[aria-hidden="false"]~input[type="submit"] {
 	font-size: 0.85em;
 	float: none !important;
 	margin-top: 0.75em;
+}
+ul.likes_block > li {
+	display: block;
+	padding-inline: 1.25em;
+	background: var(--windowbg2-bg);
+}
+ul.likes_block > li {
+	padding-block: 0.75em;
+}
+ul.likes_block > li:first-child {
+	border-top-right-radius: 0.5em;
+	border-top-left-radius: 0.5em;
+}
+ul.likes_block > li:last-child {
+	border-bottom-right-radius: 0.5em;
+	border-bottom-left-radius: 0.5em;
+}
+
+/** Color Picker **/
+#main_header #user_colorpicker a {
+	--primary-color-hue: 193;
+	color: transparent;
+	width: 18px;
+	height: 18px;
+	background: hsl(var(--primary-color-hue), 75%, 40%);
+	border-radius: 50%;
+	opacity: 0.8;
+}
+#main_header #user_colorpicker a:hover {
+	opacity: 1;
+	scale: 1.1;
+}
+#main_header #user_colorpicker a[data-color="red"] {
+	--primary-color-hue: 360;
+}
+#main_header #user_colorpicker a[data-color="green"] {
+	--primary-color-hue: 115;
+}
+#main_header #user_colorpicker a[data-color="blue"] {
+	--primary-color-hue: 205;
+}
+#main_header #user_colorpicker a[data-color="yellow"] {
+	--primary-color-hue: 50;
+}
+#main_header #user_colorpicker a[data-color="purple"] {
+	--primary-color-hue: 300;
+}
+#main_header #user_colorpicker a[data-color="pink"] {
+	--primary-color-hue: 330;
 }

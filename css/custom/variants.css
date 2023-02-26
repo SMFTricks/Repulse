@@ -1,0 +1,34 @@
+/* Red */
+:root[data-themecolor="red"] {
+	--primary-color-hue: 360;
+}
+/* Red */
+
+/* Green */
+:root[data-themecolor="green"] {
+	--primary-color-hue: 115;
+}
+/* Green */
+
+/* Blue */
+:root[data-themecolor="blue"] {
+	--primary-color-hue: 205;
+}
+/* Blue */
+
+/* Yellow */
+:root[data-themecolor="yellow"] {
+	--primary-color-hue: 50;
+}
+
+/* Pink */
+:root[data-themecolor="pink"] {
+	--primary-color-hue: 330;
+}
+/* Pink */
+
+/* Purple */
+:root[data-themecolor="purple"] {
+	--primary-color-hue: 300;
+}
+/* Purple */

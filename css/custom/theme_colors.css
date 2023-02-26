@@ -85,6 +85,8 @@
 	/* Header */
 		/* Background */
 		--header-bg: #e6e6e6;
+		/* Border */
+		--header-border-color: hsl(var(--primary-color-hue), 25%, 15%);
 
 	/* Logo */
 		/* Background */
@@ -259,11 +261,12 @@
 	/* Amt */
 		/* Background */
 		--amt-bg: #ffffff;
-		--amt-bg-active: #e6e6e6;
+		--amt-bg-active: var(--catbg-txt-color);
 		/* Color */
-		--amt-txt-color: #404040;
+		--amt-txt-color: #000000;
+		--amt-txt-color-active: #fff;
 		/* Border */
-		--amt-shadow-color: #808080;
+		--amt-shadow-color: rgba(0, 0, 0, 0.5);
 
 	/* Board Icons */
 		/* Color */
