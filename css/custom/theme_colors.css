@@ -199,7 +199,7 @@
 		/* Background */
 		--forumnews-bg: hsl(var(--primary-color-hue), 25%, 95%);
 		/* Inactive Background */
-		--forumnews-bg-inactive: hsl(var(--primary-color-hue), 20%, 85%);
+		--forumnews-bg-inactive: hsl(var(--primary-color-hue), 20%, 65%);
 
 	/* Board Moderators */
 		/* Background */

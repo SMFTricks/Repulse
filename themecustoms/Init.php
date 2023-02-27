@@ -64,6 +64,9 @@ class Init extends Config
 		// Load fonts
 		add_integration_function('integrate_pre_css_output', __CLASS__ . '::fonts', false, '$themedir/themecustoms/Init.php');
 
+		// Javascript
+		add_integration_function('integrate_pre_javascript_output', __CLASS__ . '::custom_js', false, '$themedir/themecustoms/Init.php');
+
 		// Dark Mode
 		add_integration_function('integrate_customtheme_color_darkmode', __CLASS__ . '::darkMode', false, '$themedir/themecustoms/Init.php');
 
@@ -76,12 +79,27 @@ class Init extends Config
 	 * 
 	 * Load some google fonts
 	 * 
-	 * @param array $assets The assets array
+	 * @return void
 	 */
 	public static function fonts() : void
 	{
 		// Roboto Font
 		loadCSSFile('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap', ['external' => true, 'order_pos' => -800]);
+	}
+
+	/**
+	 * Init::custom_js()
+	 * 
+	 * Load some custom javascript
+	 * 
+	 * @param array $assets The assets array
+	 */
+	public static function custom_js() : void
+	{
+		// Custom js
+		loadJavascriptFile('custom.js', [
+			'force_current' => true,
+		], 'themecustom_js');
 	}
 
 	/**

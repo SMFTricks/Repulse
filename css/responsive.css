@@ -277,13 +277,28 @@
 	}
 	.post_wrapper .poster,
 	.poster {
-		float: none;
-		width: auto;
-		min-height: 75px;
-		position: relative;
-		grid-row-end: 1;
+		width: 100%;
+		display: grid;
+		grid-template-columns: auto 1fr;
+		grid-template-rows: 1fr 1fr;
+		padding-inline: 1em;
+		align-items: center;
 		text-align: left;
-		padding: 5px 5px 5px 89px;
+		column-gap: 1em;
+	}
+	.post_wrapper .poster span.avatar {
+		grid-row: 1/-1;
+	}
+	.post_wrapper .poster span.avatar img.avatar {
+		width: 75px;
+		height: 75px;
+	}
+	.post_wrapper .poster h4 {
+		grid-column: 2/-1;
+	}
+	.post_wrapper .poster ul.user_info {
+		grid-column: 2/-1;
+		grid-row: 2;
 	}
 	.poster ul.user_info li.avatar {
 		position: absolute;
@@ -467,18 +482,25 @@
 	#info_center_blocks #block-forum_stats > span {
 		text-align: center;
 	}
-	#recent_posts_content ul li {
-		flex-wrap: wrap;
-	}
-	#recent_posts_content ul li > div {
-		flex-basis: 100%;
-	}
 	.social_icons {
 		flex-wrap: wrap;
 	}
+	#messageindex #topic_container .lastpost {
+		display: flex;
+		flex-basis: 100%;
+		order: 4;
+	}
+	#messageindex #topic_container .lastpost p {
+		display: flex;
+		gap: 5px;
+	}
+	#messageindex #topic_container .lastpost img.avatar_dot {
+		width: 20px;
+		height: 20px;
+	}
 }
 
-@media (min-width: 768px) 
+@media (min-width: 767px) 
 {
 	#mobile_user_menu.popup_container {
 		display: block !important;
@@ -528,7 +550,7 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
-		background: rgba(40, 64, 80, 0.5);
+		background: var(--popup-container-bg);
 		z-index: 5;
 	}
 	#main_menu .popup_heading,
@@ -671,6 +693,32 @@
 	.st-theme-information {
 		/* display: grid; */
 		grid-template-columns: 1fr;
+	}
+	.custom_search {
+		right: 0;
+		position: absolute;
+	}
+	.custom_search.active {
+		width: 100%;
+		height: 100%;
+		background: var(--header-bg);
+		padding-inline: 1em;
+	}
+	.custom_search.active input {
+		width: 100%;
+	}
+	.custom_search:not(.active) input,
+	.custom_search:not(.active) select {
+		display: none;
+	}
+	.custom_search button {
+		background: none;
+		box-shadow: none;
+		color: var(--topbar-txt-color);
+		border-width: 0;
+		padding-inline: 0.5em;
+		font-size: 1.2em;
+		padding-block: 0;
 	}
 }
 

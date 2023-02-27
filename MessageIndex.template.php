@@ -124,7 +124,10 @@ function template_main()
 		if (!empty($context['normal_buttons']))
 			echo '
 		<div class="mobile_buttons floatright">
-			<a class="button mobile_act">', $txt['mobile_action'], '</a>
+			<a class="button mobile_act">
+			', themecustoms_icon('fa fa-profile'), '
+				', $txt['mobile_action'], '
+			</a>
 		</div>';
 
 		echo '
@@ -346,7 +349,10 @@ function template_main()
 		if (!empty($context['normal_buttons']))
 			echo '
 			<div class="mobile_buttons floatright">
-				<a class="button mobile_act">', $txt['mobile_action'], '</a>
+				<a class="button mobile_act">
+					', themecustoms_icon('fa fa-profile'), '
+					', $txt['mobile_action'], '
+				</a>
 			</div>';
 
 		echo '

@@ -322,7 +322,7 @@ nav#main_nav {
 	margin-inline: 25px;
 	box-shadow: 0px 2px 1px 0px var(--nav-shadow-color);
 }
-nav#main_nav .mobile_user_menu {
+nav#main_nav a.mobile_user_menu {
 	background: var(--nav-item-bg-active);
 	min-height: 35px;
 	padding-inline: 0.5em;
@@ -547,6 +547,7 @@ nav#main_nav ul.menu_nav ul li a:hover {
 #top_section .inner_wrap {
 	display: flex;
 	align-items: center;
+	position: relative;
 }
 #inner_section, .inline_mod_check, .popup_window,
 .post_options ul, .post_options ul a:focus, .post_options ul a:hover,
@@ -917,7 +918,7 @@ p.moderators > :is(a, a:visited, a:hover) {
 #messageindex #topic_header .board_stats,
 #messageindex #topic_container .board_stats {
 	text-align: right;
-	margin-right: 15px;
+	padding-inline: 15px;
 }
 #messageindex #topic_container .board_stats p strong {
 	font-size: initial;
@@ -1161,7 +1162,8 @@ p.moderators > :is(a, a:visited, a:hover) {
 }
 .custom_search select,
 .custom_search input, .custom_search input.button,
-.custom_search button {
+.custom_search button,
+.custom_search.active button {
 	margin: 0 !important;
 	height: 2.5em;
 	font-size: 0.7em;
@@ -1189,12 +1191,14 @@ p.moderators > :is(a, a:visited, a:hover) {
 	appearance: none;
 	-webkit-appearance: none;
 }
-.custom_search button {
+.custom_search button,
+.custom_search.active button {
 	border-width: 1px 0;
 	border-radius: 0;
 	padding: 1px 10px;
 }
-.custom_search button:hover {
+.custom_search button:hover,
+.custom_search.active button:hover {
 	cursor: pointer;
 }
 /* Color Variants */
@@ -1289,7 +1293,9 @@ footer .footer-other span.help-links a i.fa {
 /* News Slider */
 .forum_news {
 	background-color: var(--forumnews-bg);
-	display: flex;
+	display: grid;
+	grid-template-columns: 45px 1fr;
+	grid-template-rows: 1fr 1fr;
 	flex-wrap: wrap;
 	align-items: flex-start;
 	border-radius: 5px;
@@ -1299,6 +1305,7 @@ footer .footer-other span.help-links a i.fa {
 	border-color: var(--catbg-bg);
 	box-shadow: 2px 2px 1px 0px rgba(0, 0, 0, 0.1);
 	min-height: 90px;
+	align-items: center;
 }
 .forum_news span.news_icon {
 	background-color: var(--forumnews-bg-inactive);
@@ -1308,16 +1315,18 @@ footer .footer-other span.help-links a i.fa {
 	align-items: center;
 	justify-content: center;
 	font-size: 1.3em;
-	border-radius: 0 0 10px 0;
+	border-radius: 5px 0 10px 0;
 }
 .forum_news h2 {
 	width: auto;
 	margin: 0 10px;
-	border-bottom: 2px solid var(--catbg-bg);
+	border-bottom: 2px solid var(--windowbg-bg-target);
 	line-height: 2.2em;
 	font-size: 0.85em;
 }
 .forum_news .sy-box {
+	grid-row: 2;
+	grid-column: 1/-1;
 	width: 100%;
 	display: flex;
 	margin: 0;
@@ -1353,7 +1362,7 @@ footer .footer-other span.help-links a i.fa {
 	background: var(--forumnews-bg-inactive);
 }
 .forum_news .sy-box .sy-pager li.sy-active a {
-	background: var(--catbg-bg);
+	background: var(--catbg-txt-color);
 	opacity: 1;
 }
 .forum_news .sy-box .sy-pager a {
@@ -1480,7 +1489,9 @@ footer .footer-other span.help-links a i.fa {
 #recent_posts_content ul li {
 	display: flex;
 	gap: 0.6em;
-	align-items: center;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;
 }
 #recent_posts_content ul li a {
 	align-self: center;
@@ -1492,7 +1503,7 @@ footer .footer-other span.help-links a i.fa {
 	flex-grow: 1;
 }
 #recent_posts_content ul li > div {
-	flex-basis: 35%;
+	flex-basis: 100%;
 	display: flex;
 	align-items: center;
 	gap: 0.5em;
@@ -1517,6 +1528,17 @@ footer .footer-other span.help-links a i.fa {
 #info_center_blocks span.onlinemembers_list {
 	gap: 1em;
 	flex-wrap: wrap;
+}
+#info_center_blocks span.onlinemembers_list span {
+	padding-block: 0;
+}
+#info_center_blocks span.user-online-block {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+#info_center_blocks span.onlinemembers_list.only-name {
+	gap: 0;
 }
 #info_center_blocks span.onlinemembers_list span.show_member img.avatar {
 	height: 24px;
@@ -2597,6 +2619,8 @@ ul.likes_block > li:last-child {
 	background: hsl(var(--primary-color-hue), 75%, 40%);
 	border-radius: 50%;
 	opacity: 0.8;
+	user-select: none;
+	overflow: hidden;
 }
 #main_header #user_colorpicker a:hover {
 	opacity: 1;

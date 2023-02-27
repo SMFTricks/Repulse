@@ -237,8 +237,15 @@ function template_main()
 	if (!empty($context['normal_buttons']))
 		echo '
 		<div class="mobile_buttons floatright">
-			<a class="button mobile_act">', $txt['mobile_action'], '</a>
-			', !empty($context['mod_buttons']) ? '<a class="button mobile_mod">' . $txt['mobile_moderation'] . '</a>' : '', '
+			<a class="button mobile_act">
+				', themecustoms_icon('fa fa-profile'), '
+				', $txt['mobile_action'], '
+			</a>
+			', !empty($context['mod_buttons']) ? '
+			<a class="button mobile_mod">
+				' . themecustoms_icon('fa fa-wrench') . '
+				' . $txt['mobile_moderation'] . '
+			</a>' : '', '
 		</div>';
 
 	echo '
@@ -274,8 +281,15 @@ function template_main()
 	if (!empty($context['normal_buttons']))
 		echo '
 		<div class="mobile_buttons floatright">
-			<a class="button mobile_act">', $txt['mobile_action'], '</a>
-			', !empty($context['mod_buttons']) ? '<a class="button mobile_mod">' . $txt['mobile_moderation'] . '</a>' : '', '
+			<a class="button mobile_act">
+				', themecustoms_icon('fa fa-profile'), '
+				', $txt['mobile_action'], '
+			</a>
+			', !empty($context['mod_buttons']) ? '
+			<a class="button mobile_mod">
+				' . themecustoms_icon('fa fa-wrench') . '
+				' . $txt['mobile_moderation'] . '
+			</a>' : '', '
 		</div>';
 
 	echo '
