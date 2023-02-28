@@ -70,6 +70,9 @@
 
 /* We have shared things... */
 @media screen and (max-width: 991px) {
+	.navigate_section li:not(:first-child, :last-child) {
+		display: none;
+	}
 	/* Remove some content from the hooks table */
 	#list_integration_hooks th#header_list_integration_hooks_function_name, #list_integration_hooks td.function_name,
 	#list_integration_hooks th#header_list_integration_hooks_remove, #list_integration_hooks td.remove {
@@ -432,8 +435,7 @@
 	#siteslogan, th.id_group, th.registered, th.posts, th.reg_group, th.reg_date, td.reg_group, td.reg_date,
 	td.id_group, td.registered, td.posts:not(.unique), td.statsbar.posts,
 	#member_list .ip, #member_list .last_active, #member_list .user_name,
-	#approve_list .ip, #approve_list .date_registered, #group_members .date_registered,
-	#main_content_section .navigate_section, .time,
+	#approve_list .ip, #approve_list .date_registered, #group_members .date_registered, .time,
 	#header_custom_profile_fields_field_type, #header_custom_profile_fields_active,
 	#header_custom_profile_fields_placement, #custom_profile_fields .active, #custom_profile_fields .field_type, #custom_profile_fields .placement {
 		display: none !important;

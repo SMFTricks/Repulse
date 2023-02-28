@@ -135,11 +135,11 @@ function template_body_above()
 					// Header
 					template_theme_header();
 
-					// Theme LInktree
-					// theme_linktree();
-
 			echo '
 				<div id="main_content_section">';
+
+					// Theme LInktree
+					theme_linktree();
 }
 
 /**
@@ -371,12 +371,7 @@ function theme_linktree($force_show = false)
 
 	echo '
 				<div class="navigate_section">
-					<ul>
-						<li class="trigger">
-							<a href="javascript:void(0);" tabindex="-1">
-								', themecustoms_icon('fa fa-bars'), '
-							</a>
-						</li>';
+					<ul>';
 
 	// Each tree item has a URL and name. Some may have extra_before and extra_after.
 	foreach ($context['linktree'] as $link_num => $tree)
@@ -387,10 +382,9 @@ function theme_linktree($force_show = false)
 		// Don't show a separator for the first one.
 		// Better here. Always points to the next level when the linktree breaks to a second line.
 		// Picked a better looking HTML entity, and added support for RTL plus a span for styling.
-		/*if ($link_num != 0)
+		if ($link_num != 0)
 			echo '
 							<span class="dividers">', $context['right_to_left'] ? ' &#9668; ' : ' &#9658; ', '</span>';
-		*/
 
 		// Show something before the link?
 		if (isset($tree['extra_before']))
