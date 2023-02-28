@@ -37,7 +37,7 @@ class Init extends Config
 	protected $_theme_details = [
 		'support' => [
 			'github_url' => 'https://github.com/SMFTricks/Repulse',
-			'smf_site_id' => 3023,
+			'smf_site_id' => 3024,
 			'smf_support_topic' => 0,
 			'custom_support_url' => 'https://smftricks.com',
 		],
