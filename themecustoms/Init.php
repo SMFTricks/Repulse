@@ -38,7 +38,7 @@ class Init extends Config
 		'support' => [
 			'github_url' => 'https://github.com/SMFTricks/Repulse',
 			'smf_site_id' => 3024,
-			'smf_support_topic' => 0,
+			'smf_support_topic' => 585243,
 			'custom_support_url' => 'https://smftricks.com',
 		],
 	];
