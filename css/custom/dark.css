@@ -14,7 +14,7 @@
 	--header-bg: #0d0d0d;
 	--logo-bg-hover: #0d0d0d;
 	--footer-bg: hsl(var(--primary-color-hue), 60%, 10%);
-	--newbutton-bg: linear-gradient(var(--catbg-bg), hsl(var(--primary-color-hue), 35%, 20%));
+	--newbutton-bg: linear-gradient(to top, var(--catbg-txt-color), var(--buttonlist-bg-active));
 	--nav-shadow-color: rgba(170, 170, 170, 0.1);
 	--nav-dropdown-border-color: hsl(0, 0%, 1%);
 	--nav-dropdown-bg: #0f0f0f;

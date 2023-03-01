@@ -48,7 +48,7 @@
 
 	/* New Button */
 		/* Background */
-		--newbutton-bg: linear-gradient(var(--catbg-bg), hsl(var(--primary-color-hue), 35%, 60%));
+		--newbutton-bg: linear-gradient(var(--catbg-txt-color), hsl(var(--primary-color-hue), 35%, 60%));
 		/* Color */
 		--newbutton-txt-color: hsl(var(--primary-color-hue), 30%, 95%);
 
