@@ -2603,3 +2603,9 @@ ul.likes_block > li:last-child {
 #main_header #user_colorpicker a[data-color="pink"] {
 	--primary-color-hue: 330;
 }
+
+/** Attachments **/
+.attachment_preview_wrapper .attach-ui a {
+	float: none !important;
+	margin-inline: 5px;
+}
