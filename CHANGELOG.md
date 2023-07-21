@@ -1,5 +1,10 @@
 # Changelog
 
+#### 1.0.2 - 21 July 2023
+- ![Improvement](https://smftricks.com/assets/changelog/tag--pencil.png) Improved stats pie colors.
+- ![Improvement](https://smftricks.com/assets/changelog/tag--pencil.png) Improved displaying users online in info center.
+- ![Improvement](https://smftricks.com/assets/changelog/tag--pencil.png) Added aria-label for social icons.
+
 #### 1.0.1 - 10 June 2023
 - ![Improvement](https://smftricks.com/assets/changelog/tag--pencil.png) SMF 2.1.4 patch updates.
 
