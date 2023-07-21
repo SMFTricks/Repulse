@@ -1,34 +1,40 @@
 /* Red */
 :root[data-themecolor="red"] {
 	--primary-color-hue: 360;
+	--stats-pie-hue: 145deg;
 }
 /* Red */
 
 /* Green */
 :root[data-themecolor="green"] {
 	--primary-color-hue: 115;
+	--stats-pie-hue: 245deg;
 }
 /* Green */
 
 /* Blue */
 :root[data-themecolor="blue"] {
 	--primary-color-hue: 205;
+	--stats-pie-hue: 0deg;
 }
 /* Blue */
 
 /* Yellow */
 :root[data-themecolor="yellow"] {
 	--primary-color-hue: 50;
+	--stats-pie-hue: 200deg;
 }
 
 /* Pink */
 :root[data-themecolor="pink"] {
 	--primary-color-hue: 330;
+	--stats-pie-hue: 120deg;
 }
 /* Pink */
 
 /* Purple */
 :root[data-themecolor="purple"] {
 	--primary-color-hue: 300;
+	--stats-pie-hue: 75deg;
 }
 /* Purple */
