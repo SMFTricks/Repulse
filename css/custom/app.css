@@ -1297,7 +1297,7 @@ footer .footer-other span.help-links a i.fa {
 	background-color: var(--forumnews-bg);
 	display: grid;
 	grid-template-columns: 45px 1fr;
-	grid-template-rows: 1fr 1fr;
+	grid-template-rows: auto 1fr;
 	flex-wrap: wrap;
 	align-items: flex-start;
 	border-radius: 5px;
@@ -1307,7 +1307,6 @@ footer .footer-other span.help-links a i.fa {
 	border-color: var(--catbg-bg);
 	box-shadow: 2px 2px 1px 0px rgba(0, 0, 0, 0.1);
 	min-height: 90px;
-	align-items: center;
 }
 .forum_news span.news_icon {
 	background-color: var(--forumnews-bg-inactive);
@@ -1334,7 +1333,7 @@ footer .footer-other span.help-links a i.fa {
 	margin: 0;
 	padding: 1px 10px 2px;
 	min-height: 35px;
-	align-items: center;
+	align-items: flex-start;
 	font-size: 0.9em;
 }
 .forum_news #smf_slider,
@@ -1345,6 +1344,7 @@ footer .footer-other span.help-links a i.fa {
 }
 .forum_news .sy-box .sy-slides-wrap {
 	flex-grow: 1;
+	padding-block: 0.75em;
 }
 .forum_news .sy-box .sy-pager {
 	margin: 0;
