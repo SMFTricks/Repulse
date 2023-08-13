@@ -11,7 +11,6 @@ $(function() {
 		}
 		if (document.querySelector('.custom_search').classList.contains('active'))
 		{
-			console.log('is active');
 			$(document).keyup(function(e){
 				if (e.keyCode == 27)
 					$('.custom_search').removeClass('active')
