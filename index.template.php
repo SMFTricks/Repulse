@@ -317,13 +317,13 @@ function template_theme_footer()
  */
 function template_theme_darkmode()
 {
-	global $settings;
+	global $settings, $txt;
 	
 	if (!empty($settings['st_enable_dark_mode']) && !empty($settings['customtheme_darkmode']))
 	{
 		echo '
 		<li id="user_thememode">
-			<a href="javascript:void(0);" class="theme-mode-toggle">
+			<a href="javascript:void(0);" class="theme-mode-toggle" aria-label="', $txt['st_theme_mode'], '" title="', $txt['st_theme_mode'], '">
 				<span></span>
 			</a>
 		</li>';
