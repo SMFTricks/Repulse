@@ -2631,11 +2631,15 @@ ul.likes_block > li:last-child {
 	margin-inline: 5px;
 }
 
-#personal_messages #postmodify ~ div.windowbg {
+#personal_messages #postmodify ~ div.windowbg,
+#personal_messages #preview_body {
 	padding: 15px;
 }
 
 .activity_stats li span {
 	background: var(--roundframe-bg);
 	border-color: var(--catbg-bg);
+}
+.signature {
+	word-break: break-all;
 }
