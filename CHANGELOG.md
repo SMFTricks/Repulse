@@ -1,5 +1,9 @@
 # Changelog
 
+#### 1.0.4 - 10 September 2023
+- ![Improvement](https://smftricks.com/assets/changelog/tag--pencil.png) Theme Settings tabs now go back to the same tab after saving.
+- ![Bug Fix](https://smftricks.com/assets/changelog/bug--minus.png) Fixed minor layout issues.
+
 #### 1.0.3 - 05 August 2023
 - ![Bug Fix](https://smftricks.com/assets/changelog/bug--minus.png) Fixes for styles in wysiwyg mode.
 - ![Improvement](https://smftricks.com/assets/changelog/tag--pencil.png) Improved styling for some sceditor elements.
