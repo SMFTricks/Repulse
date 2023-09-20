@@ -850,6 +850,10 @@ p.moderators {
 	width: 35px;
 	height: 35px;
 }
+.boardindex_table .lastpost p span.last_post {
+	display: flex;
+	gap: 0.25em;
+}
 .boardindex_table .lastpost p span.time {
 	display: block;
 }
