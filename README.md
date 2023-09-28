@@ -25,3 +25,4 @@
 ### [Changelog](https://github.com/SMFTricks/Repulse/blob/main/CHANGELOG.md)
 ### [Demo Online](http://demo21.smftricks.com/index.php?theme=6)
 ### [GitHub](https://github.com/SMFTricks/Repulse)
+### [Crowdin](https://crowdin.com/project/smf-theme-customs)
