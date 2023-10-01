@@ -21,7 +21,7 @@ class Init extends Config
 	/**
 	 * @var string Theme Version
 	 */
-	protected $_theme_version = '1.0.4';
+	protected $_theme_version = '1.0.5';
 
 	/**
 	 * @var array Theme Author
@@ -39,7 +39,7 @@ class Init extends Config
 			'github_url' => 'https://github.com/SMFTricks/Repulse',
 			'smf_site_id' => 3024,
 			'smf_support_topic' => 585243,
-			'custom_support_url' => 'https://smftricks.com',
+			'custom_support_url' => 'https://smftricks.com/index.php?topic=2271.0',
 		],
 	];
 
