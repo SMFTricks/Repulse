@@ -1,6 +1,6 @@
 # Changelog
 
-#### 1.0.5 - 10 September 2023
+#### 1.0.5 - 01 October 2023
 - ![Improvement](https://smftricks.com/assets/changelog/tag--pencil.png) Minor layout improvements for boards layout.
 - ![Improvement](https://smftricks.com/assets/changelog/tag--pencil.png) Theme Settings tabs minor tweaks.
 
