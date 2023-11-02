@@ -148,8 +148,6 @@ function template_main()
  */
 function template_bi_board_stats($board)
 {
-	global $txt;
-
 	echo '
 		<p>
 			<strong class="posts">', comma_format($board['posts']), '</strong>', themecustoms_icon('fa fa-comments'), '
@@ -164,8 +162,6 @@ function template_bi_board_stats($board)
  */
 function template_bi_redirect_stats($board)
 {
-	global $txt;
-
 	echo '
 		<p>
 			<strong class="redirects">', comma_format($board['posts']), '</strong>', themecustoms_icon('fa fa-link'), '
