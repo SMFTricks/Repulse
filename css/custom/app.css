@@ -2649,5 +2649,5 @@ ul.likes_block > li:last-child {
 	border-color: var(--catbg-bg);
 }
 .signature {
-	word-break: break-all;
+	word-break: break-word;
 }
