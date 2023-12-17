@@ -98,30 +98,28 @@ function template_main()
 		foreach ($category['boards'] as $board)
 		{
 			echo '
-				<div id="board_', $board['id'], '" class="up_contain b_', $board['type'], (!empty($board['css_class']) ? ' ' . $board['css_class'] : ''), '">';
+				<div id="board_', $board['id'], '" class="up_contain b_', $board['type'], (!empty($board['css_class']) ? ' ' . $board['css_class'] : ''), '">
 
-					// Show the board icon
-					function_exists('themecustoms_' . $board['type'] . '_icon') ? call_user_func('themecustoms_' . $board['type'] . '_icon', $board) : themecustoms_board_icon($board);
+					<div class="board_icon">
+						', function_exists('template_bi_' . $board['type'] . '_icon') ? call_user_func('template_bi_' . $board['type'] . '_icon', $board) : template_bi_board_icon($board), '
+					</div>
 
-					echo '
-					<div class="info">';
+					<div class="info">
+						<div class="info">
+							', function_exists('template_bi_' . $board['type'] . '_info') ? call_user_func('template_bi_' . $board['type'] . '_info', $board) : template_bi_board_info($board), '
 
-						// Show the board name, description, and moderators.
-						function_exists('themecustoms_' . $board['type'] . '_info') ? call_user_func('themecustoms_' . $board['type'] . '_info', $board) : themecustoms_board_info($board);
+							', function_exists('template_bi_' . $board['type'] . '_children') ? call_user_func('template_bi_' . $board['type'] . '_children', $board) : template_bi_board_children($board) , '
+						</div>
+					</div>
 
-						// Won't somebody think of the children!
-						function_exists('themecustoms_' . $board['type'] . '_children') ? call_user_func('themecustoms_' . $board['type'] . '_children', $board) : themecustoms_board_children($board);
+					<div class="board_stats">
+						', function_exists('template_bi_' . $board['type'] . '_stats') ? call_user_func('template_bi_' . $board['type'] . '_stats', $board) : template_bi_board_stats($board), '
+					</div>
 
-					echo '
-					</div>';
+					<div class="lastpost">
+						', function_exists('template_bi_' . $board['type'] . '_lastpost') ? call_user_func('template_bi_' . $board['type'] . '_lastpost', $board) : template_bi_board_lastpost($board), '
+					</div>
 
-					// Show some basic information about the number of posts, etc.
-					function_exists('themecustoms_' . $board['type'] . '_stats') ? call_user_func('themecustoms_' . $board['type'] . '_stats', $board) : themecustoms_board_stats($board);
-
-					// Show the last post if there is one.
-					function_exists('themecustoms_' . $board['type'] . '_lastpost') ? call_user_func('themecustoms_' . $board['type'] . '_lastpost', $board) : themecustoms_board_lastpost($board);
-
-			echo '
 				</div><!-- #board_[id] -->';
 		}
 
@@ -146,7 +144,7 @@ function template_main()
  *
  * @param array $board Current board information.
  */
-function template_bi_board_stats($board)
+function themecustoms_bi_board_stats($board)
 {
 	echo '
 		<p>
@@ -160,7 +158,7 @@ function template_bi_board_stats($board)
  *
  * @param array $board Current board information.
  */
-function template_bi_redirect_stats($board)
+function themecustoms_bi_redirect_stats($board)
 {
 	echo '
 		<p>
