@@ -498,6 +498,7 @@
 	}
 	#messageindex #topic_container .lastpost p {
 		display: flex;
+		flex-wrap: wrap;
 		gap: 5px;
 	}
 	#messageindex #topic_container .lastpost img.avatar_dot {
