@@ -1,10 +1,10 @@
 # Changelog
 
-### 1.1.2 - 19 February 2024
+#### 1.1.2 - 19 February 2024
 - ![Bug Fix](https://smftricks.com/assets/changelog/bug--minus.png) Fixed last poster layout issue.
 - ![Bug Fix](https://smftricks.com/assets/changelog/bug--minus.png) Fixed issues with dark mode or color variants when forum is closed to guests or in maintenance.
 
-### 1.1.1 - 08 February 2024
+#### 1.1.1 - 08 February 2024
 - ![Translation](https://smftricks.com/assets/changelog/language.png) Updated translations.
 
 #### 1.1.0 - 18 December 2023
