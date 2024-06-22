@@ -36,7 +36,7 @@ class Config extends Init
 	/**
 	 * @var string Theme Default Color
 	 */
-	protected string $color = '#567c8f';
+	protected string $color = '#004153';
 
 	/**
 	 * @var string GitHub URL
@@ -91,17 +91,27 @@ class Config extends Init
 	public function loadHooks() : void
 	{
 		// Load fonts
-		add_integration_function('integrate_pre_css_output', __CLASS__ . '::fonts', false, '$themedir/themecustoms/Init.php');
+		add_integration_function('integrate_pre_css_output', __CLASS__ . '::fonts', false, __FILE__, true);
 
 		// Javascript
-		add_integration_function('integrate_pre_javascript_output', __CLASS__ . '::custom_js', false, '$themedir/themecustoms/Init.php');
+		add_integration_function('integrate_pre_javascript_output', __CLASS__ . '::js', false, __FILE__,true);
 	}
 
 	/**
-	 * Load some google fonts
+	 * Load fonts
 	 */
-	public static function fonts() : void
+	public function fonts() : void
 	{
+		global $settings;
+
+		// Loading locally?
+		if (empty($settings['st_fonts_source']))
+		{
+			// Load the fonts
+			loadCSSFile('font.css', ['order_pos' => -800]);
+			return;
+		}
+
 		// Roboto Font
 		loadCSSFile('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap', ['external' => true, 'order_pos' => -800]);
 	}
@@ -109,7 +119,7 @@ class Config extends Init
 	/**
 	 * Load some custom javascript
 	 */
-	public static function js() : void
+	public function js() : void
 	{
 		// Custom js
 		loadJavascriptFile('custom.js', [

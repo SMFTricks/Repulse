@@ -317,15 +317,30 @@ function template_theme_footer()
  */
 function template_theme_darkmode()
 {
-	global $settings, $txt;
+	global $settings, $txt, $context, $scripturl;
 	
-	if (!empty($settings['st_enable_dark_mode']) && !empty($settings['customtheme_darkmode']))
+	if (!empty($context['theme_can_change_mode']))
 	{
 		echo '
-		<li id="user_thememode">
-			<a href="javascript:void(0);" class="theme-mode-toggle" aria-label="', $txt['st_theme_mode'], '" title="', $txt['st_theme_mode'], '">
-				<span></span>
+		<li id="user_mode">
+			<a href="javascript:void(0);" aria-label="', $txt['st_theme_mode_select'], '" title="', $txt['st_theme_mode_select'], '">
+				<span class="main_icons colormode"></span>
 			</a>
+			<ul id="modepicker_menu" class="top_menu dropmenu">';
+
+
+		// Theme Modes
+		foreach ($settings['theme_colormodes'] as $mode) {
+			echo '
+				<li>
+					<a href="', $scripturl,'?mode=' . $mode . '" class="theme-mode-toggle', ($context['theme_colormode'] == $mode ? ' active' : '') , '" data-mode="', $mode, '">
+						', $txt['st_'. $mode . '_mode'], '
+					</a>
+				</li>';
+		}
+
+	echo '
+			</ul>
 		</li>';
 	}
 }
@@ -337,16 +352,16 @@ function template_theme_colorpicker()
 {
 	global $settings, $txt, $scripturl, $context;
 
-	if (!empty($settings['theme_variants']) && count($settings['theme_variants']) > 1 && empty($settings['disable_user_variant']))
+	if (!empty($context['theme_can_change_variants']))
 	{
 		echo '
 		<div id="user_colorpicker">';
 		
 		// Theme variants
-		foreach ($settings['theme_variants'] as $variant)
+		foreach ($settings['theme_colorvariants'] as $variant)
 		{
 			echo '
-				<a href="', $scripturl, '?variant=' . $variant . '" class="theme-variant-toggle', ($context['theme_variant'] == $variant ? ' active' : '') , '" data-color="', $variant, '">
+				<a href="', $scripturl, '?variant=' . $variant . '" class="theme-variant-toggle', ($context['theme_variant'] == $variant ? ' active' : '') , '" data-variant="', $variant, '">
 					', $txt['variant_'. $variant], '
 				</a>';
 		}
@@ -520,7 +535,7 @@ function template_button_strip($button_strip, $direction = '', $strip_options = 
 
 			$button = '
 				<a class="button normal_button_strip_' . $key . (!empty($value['active']) ? ' active' : '') . (isset($value['class']) ? ' ' . $value['class'] : '') . (!empty($value['sub_buttons']) ? ' buttonlist_sub' : '') . '" ' . (!empty($value['url']) ? 'href="' . $value['url'] . '"' : 'href="javascript:void(0);"') . ' ' . (isset($value['custom']) ? ' ' . $value['custom'] : '') . '>
-					' . themecustoms_icon('fa fa-' . (!empty($value['icon']) ? $value['icon'] : $value['text'])) . '
+					<span class="main_icons ' . (!empty($value['icon']) ? $value['icon'] : $value['text']) . '"></span>
 					<span>' . $txt[$value['text']] . '</span>
 				</a>';
 

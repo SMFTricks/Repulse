@@ -727,6 +727,12 @@
 		font-size: 1.2em;
 		padding-block: 0;
 	}
+	#content_section {
+		padding-inline: .5rem;
+	}
+	#main_content_section {
+		padding-inline: .25rem;
+	}
 }
 
 /* Tricky menu */
