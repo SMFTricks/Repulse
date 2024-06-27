@@ -91,10 +91,10 @@ class Config extends Init
 	public function loadHooks() : void
 	{
 		// Load fonts
-		add_integration_function('integrate_pre_css_output', __CLASS__ . '::fonts', false, __FILE__, true);
+		add_integration_function('integrate_pre_css_output', __CLASS__ . '::fonts#', false, __FILE__);
 
 		// Javascript
-		add_integration_function('integrate_pre_javascript_output', __CLASS__ . '::js', false, __FILE__,true);
+		add_integration_function('integrate_pre_javascript_output', __CLASS__ . '::js#', false, __FILE__);
 	}
 
 	/**
