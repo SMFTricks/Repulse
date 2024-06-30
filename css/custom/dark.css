@@ -80,6 +80,7 @@
 	--forumsections-shadow-color: rgba(0, 0, 0, 0.1);
 	--amt-bg: #ffffff;
 	--amt-txt-color: #000000;
+	--catbg-txt-color: hsl(var(--primary-color-hue), 70%, 55%);
 }
 
 :root[data-mode="system"] {
