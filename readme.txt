@@ -6,7 +6,7 @@ Free & Premium Themes for SMF
 [size=2]Developed by: [url="https://smftricks.com/index.php?action=profile;u=1"]Diego Andrés[/url][/size]
 [size=2]Based on [url="hhttps://custom.simplemachines.org/index.php?theme=2343"]Pulse[/url] by [url="https://www.simplemachines.org/community/index.php?action=profile;u=261314"]MLM[/url][/size]
 
-[img]https://img.shields.io/github/v/release/SMFTricks/Repulse.svg?style=flat&logo=github&color=green[/img] [img]https://img.shields.io/badge/License-MIT-248049[/img] [img]https://img.shields.io/badge/SMF-2.1-3f73a0[/img] [img]https://img.shields.io/badge/Color%20Variants-Yes-6041a3[/img] [img]https://img.shields.io/badge/Dark%20Mode-Yes-4d827f[/img] [img]https://img.shields.io/badge/RLT%20Support-Yes-bf9d73[/img]
+[url="https://github.com/SMFTricks/Repulse"][img]https://img.shields.io/github/v/release/SMFTricks/Repulse.svg?style=flat&logo=github&color=green[/img][/url] [img]https://img.shields.io/badge/License-MIT-248049[/img] [img]https://img.shields.io/badge/SMF-2.1-3f73a0[/img] [img]https://img.shields.io/badge/Color%20Variants-Yes-6041a3[/img] [img]https://img.shields.io/badge/Dark%20Mode-Yes-4d827f[/img] [img]https://img.shields.io/badge/RLT%20Support-Yes-bf9d73[/img]
 
 [float=right max=40%]
 
