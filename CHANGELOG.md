@@ -1,5 +1,8 @@
 # Changelog
 
+#### 1.2.2 - 10 August 2024
+- ![Bug Fix](https://smftricks.com/assets/changelog/bug--minus.png) Fixed issue with minification of CSS and JS files.
+
 #### 1.2.1 - 10 August 2024
 - ![Improvement](https://smftricks.com/assets/changelog/tag--pencil.png) HTML attributes definition.
 - ![Bug Fix](https://smftricks.com/assets/changelog/bug--minus.png) Fixed issues with the defaults for Variants and Dark Mode.
