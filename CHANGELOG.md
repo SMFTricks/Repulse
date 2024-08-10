@@ -1,5 +1,10 @@
 # Changelog
 
+#### 1.2.1 - 10 August 2024
+- ![Improvement](https://smftricks.com/assets/changelog/tag--pencil.png) HTML attributes definition.
+- ![Bug Fix](https://smftricks.com/assets/changelog/bug--minus.png) Fixed issues with the defaults for Variants and Dark Mode.
+- ![Bug Fix](https://smftricks.com/assets/changelog/bug--minus.png) Fixed issues with the data attributes for the Variants and Dark Mode.
+
 #### 1.2 - 30 June 2024
 - ![New Feature](https://smftricks.com/assets/changelog/tag--plus.png) Changed the memberlist layout.
 - ![Bug Fix](https://smftricks.com/assets/changelog/bug--minus.png) Fixed not loading font locally when set in the settings.
