@@ -1,6 +1,6 @@
 # Changelog
 
-#### 1.2.3 - 9 April 2025
+#### 1.2.3 - 09 April 2025
 - ![Improvement](https://smftricks.com/assets/changelog/tag--pencil.png) Updated FontAwesome to version 6.7.2.
 - ![Bug Fix](https://smftricks.com/assets/changelog/bug--minus.png) Fixed issue with sceditor popovers size.
 - ![Bug Fix](https://smftricks.com/assets/changelog/bug--minus.png) Fixed issues some dropdown menus positioning.
